@@ -801,30 +801,48 @@ void MVKPhysicalDevice::initMetalFeatures() {
     _metalFeatures.texelBuffers = true;
 	_metalFeatures.maxTextureDimension = (4 * KIBI);
 
+#if TARGET_OS_TV
+    { // All tvOS devices have at least the same level of GPU as a v1 iOS device
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v2] ) {
+#endif
 		_metalFeatures.mslVersionEnum = MTLLanguageVersion1_1;
         _metalFeatures.dynamicMTLBuffers = true;
 		_metalFeatures.maxTextureDimension = (8 * KIBI);
     }
-
+#if TARGET_OS_TV
+    { // All tvOS devices have at least the same level of GPU as a v1 iOS device
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v3] ) {
+#endif
 		_metalFeatures.mslVersionEnum = MTLLanguageVersion1_2;
         _metalFeatures.shaderSpecialization = true;
         _metalFeatures.stencilViews = true;
 		_metalFeatures.fences = true;
     }
 
+#if TARGET_OS_TV
+    { // All tvOS devices have at least the same level of GPU as a v1 iOS device
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v4] ) {
+#endif
 		_metalFeatures.mslVersionEnum = MTLLanguageVersion2_0;
     }
 
+#if TARGET_OS_TV
+    { // All tvOS devices have at least the same level of GPU as a v1 iOS device
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v5] ) {
+#endif
 		_metalFeatures.mslVersionEnum = MTLLanguageVersion2_1;
 		_metalFeatures.events = true;
 		_metalFeatures.textureBuffers = true;
 	}
-
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1] ) {
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1] ) {
+#endif
 		_metalFeatures.indirectDrawing = true;
 		_metalFeatures.baseVertexInstanceDrawing = true;
 		_metalFeatures.combinedStoreResolveAction = true;
@@ -833,13 +851,22 @@ void MVKPhysicalDevice::initMetalFeatures() {
 		_metalFeatures.depthSampleCompare = true;
 	}
 
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v2] ) {
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v2] ) {
+#endif
 		_metalFeatures.arrayOfTextures = true;
 	}
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v2] ) {
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v3] ) {
+#endif
 		_metalFeatures.arrayOfSamplers = true;
 	}
 
+#if !TARGET_OS_TV
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily4_v1] ) {
 		_metalFeatures.postDepthCoverage = true;
 	}
@@ -848,6 +875,7 @@ void MVKPhysicalDevice::initMetalFeatures() {
 		_metalFeatures.layeredRendering = true;
 		_metalFeatures.stencilFeedback = true;
 	}
+#endif
 
 	if ( mvkOSVersion() >= 13.0 ) {
 		_metalFeatures.mslVersionEnum = MTLLanguageVersion2_2;
@@ -1002,27 +1030,48 @@ void MVKPhysicalDevice::initFeatures() {
 #if MVK_IOS
     _features.textureCompressionETC2 = true;
 
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v1] ) {
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily2_v1] ) {
+#endif
         _features.textureCompressionASTC_LDR = true;
     }
 
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1] ) {
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1] ) {
+#endif
         _features.occlusionQueryPrecise = true;
     }
 
+#if TARGET_OS_TV
+    { // tvOS GPU support at least as much as any iOS Family 1 GPU.
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v4] ) {
+#endif
 		_features.dualSrcBlend = true;
 	}
 
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v4] ) {
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily2_v4] ) {
+#endif
 		_features.depthClamp = true;
 	}
 
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v2] ) {
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v2] ) {
+#endif
 		_features.tessellationShader = true;
 		_features.shaderTessellationAndGeometryPointSize = true;
 	}
 
+#if !TARGET_OS_TV
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily4_v1] ) {
 		_features.imageCubeArray = true;
 	}
@@ -1030,6 +1079,8 @@ void MVKPhysicalDevice::initFeatures() {
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily5_v1] ) {
 		_features.multiViewport = true;
 	}
+#endif
+
 #endif
 
 #if MVK_MACOS
@@ -1131,7 +1182,11 @@ void MVKPhysicalDevice::initProperties() {
 
 	// Limits
 #if MVK_IOS
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v1] ) {
+#else
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily2_v1] ) {
+#endif
         _properties.limits.maxColorAttachments = kMVKCachedColorAttachmentCount;
     } else {
         _properties.limits.maxColorAttachments = 4;		// < kMVKCachedColorAttachmentCount
@@ -1281,7 +1336,11 @@ void MVKPhysicalDevice::initProperties() {
         _properties.limits.minTexelBufferOffsetAlignment = max(maxStorage, maxUniform);
     } else {
 #if MVK_IOS
+#if TARGET_OS_TV
+        if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1]) {
+#else
         if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
+#endif
             _properties.limits.minTexelBufferOffsetAlignment = 16;
         } else {
             _properties.limits.minTexelBufferOffsetAlignment = 64;
@@ -1299,21 +1358,36 @@ void MVKPhysicalDevice::initProperties() {
 #if MVK_IOS
     _properties.limits.maxFragmentInputComponents = 60;
 
+#if TARGET_OS_TV
+    if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1]) {
+#else
     if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
+#endif
         _properties.limits.optimalBufferCopyOffsetAlignment = 16;
     } else {
         _properties.limits.optimalBufferCopyOffsetAlignment = 64;
     }
 
+
+#if !TARGET_OS_TV
     if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily5_v1]) {
         _properties.limits.maxTessellationGenerationLevel = 64;
         _properties.limits.maxTessellationPatchSize = 32;
-    } else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v2]) {
-        _properties.limits.maxTessellationGenerationLevel = 16;
-        _properties.limits.maxTessellationPatchSize = 32;
-    } else {
-        _properties.limits.maxTessellationGenerationLevel = 0;
-        _properties.limits.maxTessellationPatchSize = 0;
+    }
+    else
+#endif
+    {
+#if TARGET_OS_TV
+        if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v2]) {
+#else
+        if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v2]) {
+#endif
+            _properties.limits.maxTessellationGenerationLevel = 16;
+            _properties.limits.maxTessellationPatchSize = 32;
+        } else {
+            _properties.limits.maxTessellationGenerationLevel = 0;
+            _properties.limits.maxTessellationPatchSize = 0;
+        }
     }
 #endif
 #if MVK_MACOS
@@ -1373,13 +1447,25 @@ void MVKPhysicalDevice::initProperties() {
 		_properties.limits.maxComputeSharedMemorySize = (uint32_t)_mtlDevice.maxThreadgroupMemoryLength;
 	} else {
 #if MVK_IOS
+#if !TARGET_OS_TV
 		if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily4_v1]) {
+
 			_properties.limits.maxComputeSharedMemorySize = (32 * KIBI);
-		} else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
-			_properties.limits.maxComputeSharedMemorySize = (16 * KIBI);
-		} else {
-			_properties.limits.maxComputeSharedMemorySize = ((16 * KIBI) - 32);
-		}
+        }
+        else
+#endif
+        {
+#if TARGET_OS_TV
+            if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1]) {
+#else
+            if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
+#endif
+                _properties.limits.maxComputeSharedMemorySize = (16 * KIBI);
+            } else {
+                _properties.limits.maxComputeSharedMemorySize = ((16 * KIBI) - 32);
+            }
+        }
+
 #endif
 #if MVK_MACOS
 		_properties.limits.maxComputeSharedMemorySize = (32 * KIBI);
@@ -1518,15 +1604,29 @@ void MVKPhysicalDevice::initGPUInfoProperties() {
 void MVKPhysicalDevice::initGPUInfoProperties() {
 	NSUInteger coreCnt = NSProcessInfo.processInfo.processorCount;
 	uint32_t devID = 0xa070;
+#if !TARGET_OS_TV
 	if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily5_v1]) {
 		devID = 0xa120;
 	} else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily4_v1]) {
 		devID = 0xa110;
-	} else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
-		devID = coreCnt > 2 ? 0xa101 : 0xa100;
-	} else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily2_v1]) {
-		devID = coreCnt > 2 ? 0xa081 : 0xa080;
 	}
+    else
+#endif
+    {
+#if TARGET_OS_TV
+        if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1]) {
+#else
+        if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily3_v1]) {
+#endif
+            devID = coreCnt > 2 ? 0xa101 : 0xa100;
+#if TARGET_OS_TV
+        } else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v1]) {
+#else
+        } else if ([_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily2_v1]) {
+#endif
+            devID = coreCnt > 2 ? 0xa081 : 0xa080;
+        }
+    }
 
 	_properties.vendorID = 0x0000106b;	// Apple's PCI ID
 	_properties.deviceID = devID;
@@ -1708,8 +1808,13 @@ uint32_t MVKPhysicalDevice::getHighestMTLFeatureSet() {
 
 	// Fall back to legacy feature sets on older OS's
 #if MVK_IOS
+#if TARGET_OS_TV
+    uint32_t maxFS = (uint32_t)MTLFeatureSet_tvOS_GPUFamily2_v2;
+    uint32_t minFS = (uint32_t)MTLFeatureSet_tvOS_GPUFamily1_v1;
+#else
 	uint32_t maxFS = (uint32_t)MTLFeatureSet_iOS_GPUFamily5_v1;
 	uint32_t minFS = (uint32_t)MTLFeatureSet_iOS_GPUFamily1_v1;
+#endif
 #endif
 
 #if MVK_MACOS
@@ -1825,7 +1930,11 @@ void MVKPhysicalDevice::initMemoryProperties() {
 	_hostCoherentMemoryTypes 	= 0x2;			// Shared only
 	_hostVisibleMemoryTypes		= 0x2;			// Shared only
 	_allMemoryTypes				= 0x3;			// Private & shared
+#if TARGET_OS_TV
+    { // tvOS GPUs support same as iOS GPU Family 2.
+#else
 	if ([getMTLDevice() supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v3]) {
+#endif
 		_memoryProperties.memoryTypeCount = 3;	// Memoryless storage available
 		_privateMemoryTypes			= 0x5;		// Private & memoryless
 		_lazilyAllocatedMemoryTypes	= 0x4;		// Memoryless only
@@ -1954,6 +2063,15 @@ void MVKPhysicalDevice::logGPUInfo() {
 	if (getSupportsGPUFamily(MTLGPUFamilyMacCatalyst1)) { logMsg += "\n\t\tGPU Family Mac Catalyst 1"; }
 
 #if MVK_IOS
+#if TARGET_OS_TV
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v2] ) { logMsg += "\n\t\ttvOS GPU Family 2 v2"; }
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily2_v1] ) { logMsg += "\n\t\ttvOS GPU Family 2 v1"; }
+
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v4] ) { logMsg += "\n\t\ttvOS GPU Family 1 v4"; }
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v3] ) { logMsg += "\n\t\ttvOS GPU Family 1 v3"; }
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v2] ) { logMsg += "\n\t\ttvOS GPU Family 1 v2"; }
+    if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_tvOS_GPUFamily1_v1] ) { logMsg += "\n\t\ttvOS GPU Family 1 v1"; }
+#else
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily5_v1] ) { logMsg += "\n\t\tiOS GPU Family 5 v1"; }
 
 	if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily4_v2] ) { logMsg += "\n\t\tiOS GPU Family 4 v2"; }
@@ -1975,6 +2093,7 @@ void MVKPhysicalDevice::logGPUInfo() {
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v3] ) { logMsg += "\n\t\tiOS GPU Family 1 v3"; }
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v2] ) { logMsg += "\n\t\tiOS GPU Family 1 v2"; }
     if ( [_mtlDevice supportsFeatureSet: MTLFeatureSet_iOS_GPUFamily1_v1] ) { logMsg += "\n\t\tiOS GPU Family 1 v1"; }
+#endif
 #endif
 
 #if MVK_MACOS

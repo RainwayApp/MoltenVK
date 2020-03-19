@@ -1042,6 +1042,502 @@
 		A97966AC2328063800299006 /* validate_primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979631D2328063700299006 /* validate_primitives.cpp */; };
 		A97966AD2328063800299006 /* decoration.h in Headers */ = {isa = PBXBuildFile; fileRef = A979631E2328063700299006 /* decoration.h */; };
 		A97966AE2328063800299006 /* decoration.h in Headers */ = {isa = PBXBuildFile; fileRef = A979631E2328063700299006 /* decoration.h */; };
+		B43C33A22408809300CB8A84 /* spirv_cfg.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290921CC60BC00B52A68 /* spirv_cfg.hpp */; };
+		B43C33A32408809300CB8A84 /* spirv_cross_parsed_ir.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290821CC60BC00B52A68 /* spirv_cross_parsed_ir.hpp */; };
+		B43C33A42408809300CB8A84 /* spirv_common.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290721CC60BC00B52A68 /* spirv_common.hpp */; };
+		B43C33A52408809300CB8A84 /* spirv_glsl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290A21CC60BC00B52A68 /* spirv_glsl.hpp */; };
+		B43C33A62408809300CB8A84 /* spirv_parser.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290C21CC60BC00B52A68 /* spirv_parser.hpp */; };
+		B43C33A72408809300CB8A84 /* spirv_cross.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290321CC60BC00B52A68 /* spirv_cross.hpp */; };
+		B43C33A82408809300CB8A84 /* spirv_msl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A976290221CC60BC00B52A68 /* spirv_msl.hpp */; };
+		B43C33A92408809300CB8A84 /* spirv_reflect.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 450A4F63221C5A95007203D7 /* spirv_reflect.hpp */; };
+		B43C33AB2408809300CB8A84 /* spirv_msl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290D21CC60BC00B52A68 /* spirv_msl.cpp */; };
+		B43C33AC2408809300CB8A84 /* spirv_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290421CC60BC00B52A68 /* spirv_parser.cpp */; };
+		B43C33AD2408809300CB8A84 /* spirv_cfg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290B21CC60BC00B52A68 /* spirv_cfg.cpp */; };
+		B43C33AE2408809300CB8A84 /* spirv_cross.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290521CC60BC00B52A68 /* spirv_cross.cpp */; };
+		B43C33AF2408809300CB8A84 /* spirv_reflect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450A4F64221C5A95007203D7 /* spirv_reflect.cpp */; };
+		B43C33B02408809300CB8A84 /* spirv_glsl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290621CC60BC00B52A68 /* spirv_glsl.cpp */; };
+		B43C33B12408809300CB8A84 /* spirv_cross_parsed_ir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A976290E21CC60BC00B52A68 /* spirv_cross_parsed_ir.cpp */; };
+		B43C33B82408812200CB8A84 /* spirv_optimizer_options.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E42328063700299006 /* spirv_optimizer_options.h */; };
+		B43C33B92408812200CB8A84 /* inline_exhaustive_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979623A2328063700299006 /* inline_exhaustive_pass.h */; };
+		B43C33BA2408812200CB8A84 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961F72328063700299006 /* types.h */; };
+		B43C33BB2408812200CB8A84 /* loop_peeling.h in Headers */ = {isa = PBXBuildFile; fileRef = A979620F2328063700299006 /* loop_peeling.h */; };
+		B43C33BC2408812200CB8A84 /* operand_to_undef_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961642328063600299006 /* operand_to_undef_reduction_opportunity_finder.h */; };
+		B43C33BD2408812200CB8A84 /* loop_unswitch_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627A2328063700299006 /* loop_unswitch_pass.h */; };
+		B43C33BE2408812200CB8A84 /* loop_descriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627D2328063700299006 /* loop_descriptor.h */; };
+		B43C33BF2408812200CB8A84 /* loop_dependence.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962362328063700299006 /* loop_dependence.h */; };
+		B43C33C02408812200CB8A84 /* dead_insert_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962272328063700299006 /* dead_insert_elim_pass.h */; };
+		B43C33C12408812200CB8A84 /* redundancy_elimination.h in Headers */ = {isa = PBXBuildFile; fileRef = A979626F2328063700299006 /* redundancy_elimination.h */; };
+		B43C33C22408812200CB8A84 /* block_merge_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961FD2328063700299006 /* block_merge_pass.h */; };
+		B43C33C32408812200CB8A84 /* ccp_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979628A2328063700299006 /* ccp_pass.h */; };
+		B43C33C42408812200CB8A84 /* ssa_rewrite_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979624C2328063700299006 /* ssa_rewrite_pass.h */; };
+		B43C33C52408812200CB8A84 /* dead_branch_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962572328063700299006 /* dead_branch_elim_pass.h */; };
+		B43C33C62408812200CB8A84 /* operand.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A92328063700299006 /* operand.h */; };
+		B43C33C72408812200CB8A84 /* remove_block_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961962328063700299006 /* remove_block_reduction_opportunity_finder.h */; };
+		B43C33C82408812200CB8A84 /* desc_sroa.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962132328063700299006 /* desc_sroa.h */; };
+		B43C33C92408812200CB8A84 /* inline_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962352328063700299006 /* inline_pass.h */; };
+		B43C33CA2408812200CB8A84 /* process_lines_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979621D2328063700299006 /* process_lines_pass.h */; };
+		B43C33CB2408812200CB8A84 /* fold.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962552328063700299006 /* fold.h */; };
+		B43C33CC2408812200CB8A84 /* validate.h in Headers */ = {isa = PBXBuildFile; fileRef = A97963032328063700299006 /* validate.h */; };
+		B43C33CD2408812200CB8A84 /* eliminate_dead_constant_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979624A2328063700299006 /* eliminate_dead_constant_pass.h */; };
+		B43C33CE2408812200CB8A84 /* extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E82328063700299006 /* extensions.h */; };
+		B43C33CF2408812200CB8A84 /* macro.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961AB2328063700299006 /* macro.h */; };
+		B43C33D02408812200CB8A84 /* reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961942328063700299006 /* reduction_opportunity_finder.h */; };
+		B43C33D12408812200CB8A84 /* cfa.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A02328063700299006 /* cfa.h */; };
+		B43C33D22408812200CB8A84 /* convert_to_half_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962052328063700299006 /* convert_to_half_pass.h */; };
+		B43C33D32408812200CB8A84 /* composite.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961CC2328063700299006 /* composite.h */; };
+		B43C33D42408812200CB8A84 /* pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962512328063700299006 /* pass.h */; };
+		B43C33D52408812200CB8A84 /* reducer.h in Headers */ = {isa = PBXBuildFile; fileRef = A979618F2328063700299006 /* reducer.h */; };
+		B43C33D62408812200CB8A84 /* ext_inst.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962DF2328063700299006 /* ext_inst.h */; };
+		B43C33D72408812200CB8A84 /* table.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962992328063700299006 /* table.h */; };
+		B43C33D82408812200CB8A84 /* loop_fission.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962442328063700299006 /* loop_fission.h */; };
+		B43C33D92408812200CB8A84 /* mem_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979622C2328063700299006 /* mem_pass.h */; };
+		B43C33DA2408812200CB8A84 /* split_invalid_unreachable_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962482328063700299006 /* split_invalid_unreachable_pass.h */; };
+		B43C33DB2408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961802328063600299006 /* structured_loop_to_selection_reduction_opportunity_finder.h */; };
+		B43C33DC2408812200CB8A84 /* vector_dce.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962822328063700299006 /* vector_dce.h */; };
+		B43C33DD2408812200CB8A84 /* local_ssa_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962722328063700299006 /* local_ssa_elim_pass.h */; };
+		B43C33DE2408812200CB8A84 /* graphics_robust_access_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D02328063700299006 /* graphics_robust_access_pass.h */; };
+		B43C33DF2408812200CB8A84 /* remove_selection_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961842328063600299006 /* remove_selection_reduction_opportunity_finder.h */; };
+		B43C33E02408812200CB8A84 /* block_merge_util.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962112328063700299006 /* block_merge_util.h */; };
+		B43C33E12408812200CB8A84 /* diagnostic.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961B62328063700299006 /* diagnostic.h */; };
+		B43C33E22408812200CB8A84 /* dominator_tree.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962942328063700299006 /* dominator_tree.h */; };
+		B43C33E32408812200CB8A84 /* instruction.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627F2328063700299006 /* instruction.h */; };
+		B43C33E42408812200CB8A84 /* remove_function_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A979618A2328063600299006 /* remove_function_reduction_opportunity_finder.h */; };
+		B43C33E52408812200CB8A84 /* inst_bindless_check_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962912328063700299006 /* inst_bindless_check_pass.h */; };
+		B43C33E62408812200CB8A84 /* propagator.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961E42328063700299006 /* propagator.h */; };
+		B43C33E72408812200CB8A84 /* latest_version_glsl_std_450_header.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E72328063700299006 /* latest_version_glsl_std_450_header.h */; };
+		B43C33E82408812200CB8A84 /* name_mapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961B32328063700299006 /* name_mapper.h */; };
+		B43C33E92408812200CB8A84 /* instruction.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E32328063700299006 /* instruction.h */; };
+		B43C33EA2408812200CB8A84 /* unify_const_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961F52328063700299006 /* unify_const_pass.h */; };
+		B43C33EB2408812200CB8A84 /* struct_cfg_analysis.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962162328063700299006 /* struct_cfg_analysis.h */; };
+		B43C33EC2408812200CB8A84 /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962872328063700299006 /* iterator.h */; };
+		B43C33ED2408812200CB8A84 /* private_to_local_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962042328063700299006 /* private_to_local_pass.h */; };
+		B43C33EE2408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961722328063600299006 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.h */; };
+		B43C33EF2408812200CB8A84 /* disassemble.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961C12328063700299006 /* disassemble.h */; };
+		B43C33F02408812200CB8A84 /* simple_conditional_branch_to_branch_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961792328063600299006 /* simple_conditional_branch_to_branch_opportunity_finder.h */; };
+		B43C33F12408812200CB8A84 /* eliminate_dead_functions_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962532328063700299006 /* eliminate_dead_functions_pass.h */; };
+		B43C33F22408812200CB8A84 /* feature_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962902328063700299006 /* feature_manager.h */; };
+		B43C33F32408812200CB8A84 /* remove_opname_instruction_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961752328063600299006 /* remove_opname_instruction_reduction_opportunity_finder.h */; };
+		B43C33F42408812200CB8A84 /* instrument_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979622B2328063700299006 /* instrument_pass.h */; };
+		B43C33F52408812200CB8A84 /* type_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962962328063700299006 /* type_manager.h */; };
+		B43C33F62408812200CB8A84 /* loop_unroller.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961F12328063700299006 /* loop_unroller.h */; };
+		B43C33F72408812200CB8A84 /* local_single_block_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979621E2328063700299006 /* local_single_block_elim_pass.h */; };
+		B43C33F82408812200CB8A84 /* latest_version_spirv_header.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E12328063700299006 /* latest_version_spirv_header.h */; };
+		B43C33F92408812200CB8A84 /* value_number_table.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962372328063700299006 /* value_number_table.h */; };
+		B43C33FA2408812200CB8A84 /* validate_scopes.h in Headers */ = {isa = PBXBuildFile; fileRef = A97963082328063700299006 /* validate_scopes.h */; };
+		B43C33FB2408812200CB8A84 /* decompose_initialized_variables_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979628C2328063700299006 /* decompose_initialized_variables_pass.h */; };
+		B43C33FC2408812200CB8A84 /* function.h in Headers */ = {isa = PBXBuildFile; fileRef = A979628D2328063700299006 /* function.h */; };
+		B43C33FD2408812200CB8A84 /* simplification_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962632328063700299006 /* simplification_pass.h */; };
+		B43C33FE2408812200CB8A84 /* strip_debug_info_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D82328063700299006 /* strip_debug_info_pass.h */; };
+		B43C33FF2408812200CB8A84 /* bitutils.h in Headers */ = {isa = PBXBuildFile; fileRef = A979615C2328063600299006 /* bitutils.h */; };
+		B43C34002408812200CB8A84 /* spirv_target_env.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961612328063600299006 /* spirv_target_env.h */; };
+		B43C34012408812200CB8A84 /* spirv_reducer_options.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A42328063700299006 /* spirv_reducer_options.h */; };
+		B43C34022408812200CB8A84 /* make_unique.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961552328063600299006 /* make_unique.h */; };
+		B43C34032408812200CB8A84 /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962472328063700299006 /* log.h */; };
+		B43C34042408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A979617C2328063600299006 /* structured_loop_to_selection_reduction_opportunity.h */; };
+		B43C34052408812200CB8A84 /* upgrade_memory_model.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962402328063700299006 /* upgrade_memory_model.h */; };
+		B43C34062408812200CB8A84 /* loop_fusion_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962152328063700299006 /* loop_fusion_pass.h */; };
+		B43C34072408812200CB8A84 /* remove_instruction_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961712328063600299006 /* remove_instruction_reduction_opportunity.h */; };
+		B43C34082408812200CB8A84 /* spirv_constant.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961AC2328063700299006 /* spirv_constant.h */; };
+		B43C34092408812200CB8A84 /* combine_access_chains.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962832328063700299006 /* combine_access_chains.h */; };
+		B43C340A2408812200CB8A84 /* eliminate_dead_functions_util.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962542328063700299006 /* eliminate_dead_functions_util.h */; };
+		B43C340B2408812200CB8A84 /* flatten_decoration_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962382328063700299006 /* flatten_decoration_pass.h */; };
+		B43C340C2408812200CB8A84 /* fix_storage_class.h in Headers */ = {isa = PBXBuildFile; fileRef = A979625B2328063700299006 /* fix_storage_class.h */; };
+		B43C340D2408812200CB8A84 /* assembly_grammar.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961492328063600299006 /* assembly_grammar.h */; };
+		B43C340E2408812200CB8A84 /* passes.h in Headers */ = {isa = PBXBuildFile; fileRef = A979625E2328063700299006 /* passes.h */; };
+		B43C340F2408812200CB8A84 /* local_redundancy_elimination.h in Headers */ = {isa = PBXBuildFile; fileRef = A979620D2328063700299006 /* local_redundancy_elimination.h */; };
+		B43C34102408812200CB8A84 /* instruction.h in Headers */ = {isa = PBXBuildFile; fileRef = A97963152328063700299006 /* instruction.h */; };
+		B43C34112408812200CB8A84 /* dead_variable_elimination.h in Headers */ = {isa = PBXBuildFile; fileRef = A979624E2328063700299006 /* dead_variable_elimination.h */; };
+		B43C34122408812200CB8A84 /* basic_block.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961FA2328063700299006 /* basic_block.h */; };
+		B43C34132408812200CB8A84 /* local_single_store_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D32328063700299006 /* local_single_store_elim_pass.h */; };
+		B43C34142408812200CB8A84 /* remove_block_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961662328063600299006 /* remove_block_reduction_opportunity.h */; };
+		B43C34152408812200CB8A84 /* construct.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962F12328063700299006 /* construct.h */; };
+		B43C34162408812200CB8A84 /* opcode.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962E52328063700299006 /* opcode.h */; };
+		B43C34172408812200CB8A84 /* function.h in Headers */ = {isa = PBXBuildFile; fileRef = A979631A2328063700299006 /* function.h */; };
+		B43C34182408812200CB8A84 /* scalar_analysis.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D72328063700299006 /* scalar_analysis.h */; };
+		B43C34192408812200CB8A84 /* aggressive_dead_code_elim_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962802328063700299006 /* aggressive_dead_code_elim_pass.h */; };
+		B43C341A2408812200CB8A84 /* fold_spec_constant_op_and_composite_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961F82328063700299006 /* fold_spec_constant_op_and_composite_pass.h */; };
+		B43C341B2408812200CB8A84 /* reduction_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979619D2328063700299006 /* reduction_pass.h */; };
+		B43C341C2408812200CB8A84 /* merge_blocks_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961852328063600299006 /* merge_blocks_reduction_opportunity_finder.h */; };
+		B43C341D2408812200CB8A84 /* legalize_vector_shuffle_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D22328063700299006 /* legalize_vector_shuffle_pass.h */; };
+		B43C341E2408812200CB8A84 /* latest_version_opencl_std_header.h in Headers */ = {isa = PBXBuildFile; fileRef = A979619E2328063700299006 /* latest_version_opencl_std_header.h */; };
+		B43C341F2408812200CB8A84 /* text_handler.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961B12328063700299006 /* text_handler.h */; };
+		B43C34202408812200CB8A84 /* remove_duplicates_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962642328063700299006 /* remove_duplicates_pass.h */; };
+		B43C34212408812200CB8A84 /* remove_unreferenced_instruction_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A979618C2328063600299006 /* remove_unreferenced_instruction_reduction_opportunity_finder.h */; };
+		B43C34222408812200CB8A84 /* decoration.h in Headers */ = {isa = PBXBuildFile; fileRef = A979631E2328063700299006 /* decoration.h */; };
+		B43C34232408812200CB8A84 /* instruction_list.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961E52328063700299006 /* instruction_list.h */; };
+		B43C34242408812200CB8A84 /* eliminate_dead_members_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979622F2328063700299006 /* eliminate_dead_members_pass.h */; };
+		B43C34252408812200CB8A84 /* tree_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961CF2328063700299006 /* tree_iterator.h */; };
+		B43C34262408812200CB8A84 /* validation_state.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962FD2328063700299006 /* validation_state.h */; };
+		B43C34272408812200CB8A84 /* reflect.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962662328063700299006 /* reflect.h */; };
+		B43C34282408812200CB8A84 /* ir_loader.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961F62328063700299006 /* ir_loader.h */; };
+		B43C34292408812200CB8A84 /* pch_source_reduce.h in Headers */ = {isa = PBXBuildFile; fileRef = A979618B2328063600299006 /* pch_source_reduce.h */; };
+		B43C342A2408812200CB8A84 /* set_spec_constant_default_value_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962932328063700299006 /* set_spec_constant_default_value_pass.h */; };
+		B43C342B2408812200CB8A84 /* scalar_replacement_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979626B2328063700299006 /* scalar_replacement_pass.h */; };
+		B43C342C2408812200CB8A84 /* simple_conditional_branch_to_branch_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A979616F2328063600299006 /* simple_conditional_branch_to_branch_reduction_opportunity.h */; };
+		B43C342D2408812200CB8A84 /* remove_function_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A979617D2328063600299006 /* remove_function_reduction_opportunity.h */; };
+		B43C342E2408812200CB8A84 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961592328063600299006 /* timer.h */; };
+		B43C342F2408812200CB8A84 /* ilist.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961602328063600299006 /* ilist.h */; };
+		B43C34302408812200CB8A84 /* inst_buff_addr_check_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962202328063700299006 /* inst_buff_addr_check_pass.h */; };
+		B43C34312408812200CB8A84 /* merge_return_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961C72328063700299006 /* merge_return_pass.h */; };
+		B43C34322408812200CB8A84 /* reduction_util.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961982328063700299006 /* reduction_util.h */; };
+		B43C34332408812200CB8A84 /* small_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961572328063600299006 /* small_vector.h */; };
+		B43C34342408812200CB8A84 /* binary.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962EA2328063700299006 /* binary.h */; };
+		B43C34352408812200CB8A84 /* decoration_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A979621B2328063700299006 /* decoration_manager.h */; };
+		B43C34362408812200CB8A84 /* freeze_spec_constant_value_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962292328063700299006 /* freeze_spec_constant_value_pass.h */; };
+		B43C34372408812200CB8A84 /* workaround1209.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962452328063700299006 /* workaround1209.h */; };
+		B43C34382408812200CB8A84 /* hex_float.h in Headers */ = {isa = PBXBuildFile; fileRef = A979615D2328063600299006 /* hex_float.h */; };
+		B43C34392408812200CB8A84 /* basic_block.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962F62328063700299006 /* basic_block.h */; };
+		B43C343A2408812200CB8A84 /* cfg.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627B2328063700299006 /* cfg.h */; };
+		B43C343B2408812200CB8A84 /* merge_blocks_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961992328063700299006 /* merge_blocks_reduction_opportunity.h */; };
+		B43C343C2408812200CB8A84 /* text.h in Headers */ = {isa = PBXBuildFile; fileRef = A979614F2328063600299006 /* text.h */; };
+		B43C343D2408812200CB8A84 /* inline_opaque_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961C82328063700299006 /* inline_opaque_pass.h */; };
+		B43C343E2408812200CB8A84 /* loop_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962752328063700299006 /* loop_utils.h */; };
+		B43C343F2408812200CB8A84 /* strength_reduction_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962212328063700299006 /* strength_reduction_pass.h */; };
+		B43C34402408812200CB8A84 /* pch_source.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A12328063700299006 /* pch_source.h */; };
+		B43C34412408812200CB8A84 /* const_folding_rules.h in Headers */ = {isa = PBXBuildFile; fileRef = A979626A2328063700299006 /* const_folding_rules.h */; };
+		B43C34422408812200CB8A84 /* enum_string_mapping.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A22328063700299006 /* enum_string_mapping.h */; };
+		B43C34432408812200CB8A84 /* string_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961562328063600299006 /* string_utils.h */; };
+		B43C34442408812200CB8A84 /* operand_to_dominating_id_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961672328063600299006 /* operand_to_dominating_id_reduction_opportunity_finder.h */; };
+		B43C34452408812200CB8A84 /* spirv_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961B72328063700299006 /* spirv_endian.h */; };
+		B43C34462408812200CB8A84 /* loop_fusion.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961C92328063700299006 /* loop_fusion.h */; };
+		B43C34472408812200CB8A84 /* parse_number.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961532328063600299006 /* parse_number.h */; };
+		B43C34482408812200CB8A84 /* build_module.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962892328063700299006 /* build_module.h */; };
+		B43C34492408812200CB8A84 /* spirv_fuzzer_options.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961482328063600299006 /* spirv_fuzzer_options.h */; };
+		B43C344A2408812200CB8A84 /* remove_relaxed_precision_decoration_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961832328063600299006 /* remove_relaxed_precision_decoration_opportunity_finder.h */; };
+		B43C344B2408812200CB8A84 /* ilist_node.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961542328063600299006 /* ilist_node.h */; };
+		B43C344C2408812200CB8A84 /* enum_set.h in Headers */ = {isa = PBXBuildFile; fileRef = A979614A2328063600299006 /* enum_set.h */; };
+		B43C344D2408812200CB8A84 /* register_pressure.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961CE2328063700299006 /* register_pressure.h */; };
+		B43C344E2408812200CB8A84 /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962762328063700299006 /* module.h */; };
+		B43C344F2408812200CB8A84 /* copy_prop_arrays.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962492328063700299006 /* copy_prop_arrays.h */; };
+		B43C34502408812200CB8A84 /* spirv_validator_options.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961AF2328063700299006 /* spirv_validator_options.h */; };
+		B43C34512408812200CB8A84 /* pch_source_opt.h in Headers */ = {isa = PBXBuildFile; fileRef = A979626D2328063700299006 /* pch_source_opt.h */; };
+		B43C34522408812200CB8A84 /* spirv_definition.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961A82328063700299006 /* spirv_definition.h */; };
+		B43C34532408812200CB8A84 /* def_use_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962082328063700299006 /* def_use_manager.h */; };
+		B43C34542408812200CB8A84 /* scalar_analysis_nodes.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962592328063700299006 /* scalar_analysis_nodes.h */; };
+		B43C34552408812200CB8A84 /* change_operand_to_undef_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A979617E2328063600299006 /* change_operand_to_undef_reduction_opportunity.h */; };
+		B43C34562408812200CB8A84 /* compact_ids_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961CD2328063700299006 /* compact_ids_pass.h */; };
+		B43C34572408812200CB8A84 /* null_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962682328063700299006 /* null_pass.h */; };
+		B43C34582408812200CB8A84 /* change_operand_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961952328063700299006 /* change_operand_reduction_opportunity.h */; };
+		B43C34592408812200CB8A84 /* reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961912328063700299006 /* reduction_opportunity.h */; };
+		B43C345A2408812200CB8A84 /* local_access_chain_convert_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961DF2328063700299006 /* local_access_chain_convert_pass.h */; };
+		B43C345B2408812200CB8A84 /* print.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961BF2328063700299006 /* print.h */; };
+		B43C345C2408812200CB8A84 /* operand_to_const_reduction_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A979616A2328063600299006 /* operand_to_const_reduction_opportunity_finder.h */; };
+		B43C345D2408812200CB8A84 /* if_conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961C42328063700299006 /* if_conversion.h */; };
+		B43C345E2408812200CB8A84 /* folding_rules.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962522328063700299006 /* folding_rules.h */; };
+		B43C345F2408812200CB8A84 /* pass_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962842328063700299006 /* pass_manager.h */; };
+		B43C34602408812200CB8A84 /* strip_reflect_info_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962612328063700299006 /* strip_reflect_info_pass.h */; };
+		B43C34612408812200CB8A84 /* code_sink.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627C2328063700299006 /* code_sink.h */; };
+		B43C34622408812200CB8A84 /* wrap_opkill.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962192328063700299006 /* wrap_opkill.h */; };
+		B43C34632408812200CB8A84 /* strip_atomic_counter_memory_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D12328063700299006 /* strip_atomic_counter_memory_pass.h */; };
+		B43C34642408812200CB8A84 /* ir_builder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962792328063700299006 /* ir_builder.h */; };
+		B43C34652408812200CB8A84 /* remove_selection_reduction_opportunity.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961812328063600299006 /* remove_selection_reduction_opportunity.h */; };
+		B43C34662408812200CB8A84 /* parsed_operand.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961B22328063700299006 /* parsed_operand.h */; };
+		B43C34672408812200CB8A84 /* bit_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = A979615B2328063600299006 /* bit_vector.h */; };
+		B43C34682408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961922328063700299006 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.h */; };
+		B43C34692408812200CB8A84 /* validate_memory_semantics.h in Headers */ = {isa = PBXBuildFile; fileRef = A979630A2328063700299006 /* validate_memory_semantics.h */; };
+		B43C346A2408812200CB8A84 /* replace_invalid_opc.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961DE2328063700299006 /* replace_invalid_opc.h */; };
+		B43C346B2408812200CB8A84 /* dominator_analysis.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962502328063700299006 /* dominator_analysis.h */; };
+		B43C346C2408812200CB8A84 /* constants.h in Headers */ = {isa = PBXBuildFile; fileRef = A979623B2328063700299006 /* constants.h */; };
+		B43C346D2408812200CB8A84 /* relax_float_ops_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962062328063700299006 /* relax_float_ops_pass.h */; };
+		B43C346E2408812200CB8A84 /* reduce_load_size.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961D42328063700299006 /* reduce_load_size.h */; };
+		B43C346F2408812200CB8A84 /* cfg_cleanup_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979620A2328063700299006 /* cfg_cleanup_pass.h */; };
+		B43C34702408812200CB8A84 /* generate_webgpu_initializers_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A979627E2328063700299006 /* generate_webgpu_initializers_pass.h */; };
+		B43C34712408812200CB8A84 /* amd_ext_to_khr.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961EA2328063700299006 /* amd_ext_to_khr.h */; };
+		B43C34722408812200CB8A84 /* licm_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = A97962882328063700299006 /* licm_pass.h */; };
+		B43C34732408812200CB8A84 /* ir_context.h in Headers */ = {isa = PBXBuildFile; fileRef = A97961EC2328063700299006 /* ir_context.h */; };
+		B43C34752408812200CB8A84 /* spirv_reducer_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961B42328063700299006 /* spirv_reducer_options.cpp */; };
+		B43C34762408812200CB8A84 /* loop_fission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E82328063700299006 /* loop_fission.cpp */; };
+		B43C34772408812200CB8A84 /* binary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961AE2328063700299006 /* binary.cpp */; };
+		B43C34782408812200CB8A84 /* text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979614D2328063600299006 /* text.cpp */; };
+		B43C34792408812200CB8A84 /* struct_cfg_analysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962812328063700299006 /* struct_cfg_analysis.cpp */; };
+		B43C347A2408812200CB8A84 /* loop_fusion_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962462328063700299006 /* loop_fusion_pass.cpp */; };
+		B43C347B2408812200CB8A84 /* code_sink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961D52328063700299006 /* code_sink.cpp */; };
+		B43C347C2408812200CB8A84 /* validate_atomics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F52328063700299006 /* validate_atomics.cpp */; };
+		B43C347D2408812200CB8A84 /* desc_sroa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979623E2328063700299006 /* desc_sroa.cpp */; };
+		B43C347E2408812200CB8A84 /* pass_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962422328063700299006 /* pass_manager.cpp */; };
+		B43C347F2408812200CB8A84 /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962302328063700299006 /* function.cpp */; };
+		B43C34802408812200CB8A84 /* operand_to_dominating_id_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961932328063700299006 /* operand_to_dominating_id_reduction_opportunity_finder.cpp */; };
+		B43C34812408812200CB8A84 /* remove_relaxed_precision_decoration_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979616D2328063600299006 /* remove_relaxed_precision_decoration_opportunity_finder.cpp */; };
+		B43C34822408812200CB8A84 /* opcode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961BE2328063700299006 /* opcode.cpp */; };
+		B43C34832408812200CB8A84 /* remove_function_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961702328063600299006 /* remove_function_reduction_opportunity_finder.cpp */; };
+		B43C34842408812200CB8A84 /* fold_spec_constant_op_and_composite_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961FF2328063700299006 /* fold_spec_constant_op_and_composite_pass.cpp */; };
+		B43C34852408812200CB8A84 /* dead_variable_elimination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961FC2328063700299006 /* dead_variable_elimination.cpp */; };
+		B43C34862408812200CB8A84 /* local_access_chain_convert_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962852328063700299006 /* local_access_chain_convert_pass.cpp */; };
+		B43C34872408812200CB8A84 /* validate_literals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963122328063700299006 /* validate_literals.cpp */; };
+		B43C34882408812200CB8A84 /* pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E72328063700299006 /* pass.cpp */; };
+		B43C34892408812200CB8A84 /* validation_state.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979631C2328063700299006 /* validation_state.cpp */; };
+		B43C348A2408812200CB8A84 /* validate_small_type_uses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963062328063700299006 /* validate_small_type_uses.cpp */; };
+		B43C348B2408812200CB8A84 /* validate_layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963172328063700299006 /* validate_layout.cpp */; };
+		B43C348C2408812200CB8A84 /* fix_storage_class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962702328063700299006 /* fix_storage_class.cpp */; };
+		B43C348D2408812200CB8A84 /* instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963132328063700299006 /* instruction.cpp */; };
+		B43C348E2408812200CB8A84 /* operand_to_undef_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961892328063600299006 /* operand_to_undef_reduction_opportunity_finder.cpp */; };
+		B43C348F2408812200CB8A84 /* validate_composites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979631B2328063700299006 /* validate_composites.cpp */; };
+		B43C34902408812200CB8A84 /* merge_return_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961EB2328063700299006 /* merge_return_pass.cpp */; };
+		B43C34912408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979616E2328063600299006 /* structured_loop_to_selection_reduction_opportunity_finder.cpp */; };
+		B43C34922408812200CB8A84 /* freeze_spec_constant_value_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961DD2328063700299006 /* freeze_spec_constant_value_pass.cpp */; };
+		B43C34932408812200CB8A84 /* remove_instruction_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961822328063600299006 /* remove_instruction_reduction_opportunity.cpp */; };
+		B43C34942408812200CB8A84 /* ccp_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979621C2328063700299006 /* ccp_pass.cpp */; };
+		B43C34952408812200CB8A84 /* pch_source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961512328063600299006 /* pch_source.cpp */; };
+		B43C34962408812200CB8A84 /* cfg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961D92328063700299006 /* cfg.cpp */; };
+		B43C34972408812200CB8A84 /* basic_block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963182328063700299006 /* basic_block.cpp */; };
+		B43C34982408812200CB8A84 /* merge_blocks_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979618D2328063700299006 /* merge_blocks_reduction_opportunity_finder.cpp */; };
+		B43C34992408812200CB8A84 /* validate_extensions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963002328063700299006 /* validate_extensions.cpp */; };
+		B43C349A2408812200CB8A84 /* merge_blocks_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979617A2328063600299006 /* merge_blocks_reduction_opportunity.cpp */; };
+		B43C349B2408812200CB8A84 /* validate_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962EE2328063700299006 /* validate_misc.cpp */; };
+		B43C349C2408812200CB8A84 /* dead_branch_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962252328063700299006 /* dead_branch_elim_pass.cpp */; };
+		B43C349D2408812200CB8A84 /* instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979626C2328063700299006 /* instruction.cpp */; };
+		B43C349E2408812200CB8A84 /* table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961622328063600299006 /* table.cpp */; };
+		B43C349F2408812200CB8A84 /* validate_datarules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963072328063700299006 /* validate_datarules.cpp */; };
+		B43C34A02408812200CB8A84 /* wrap_opkill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961EF2328063700299006 /* wrap_opkill.cpp */; };
+		B43C34A12408812200CB8A84 /* decompose_initialized_variables_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962782328063700299006 /* decompose_initialized_variables_pass.cpp */; };
+		B43C34A22408812200CB8A84 /* loop_fusion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979628E2328063700299006 /* loop_fusion.cpp */; };
+		B43C34A32408812200CB8A84 /* loop_descriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979622D2328063700299006 /* loop_descriptor.cpp */; };
+		B43C34A42408812200CB8A84 /* legalize_vector_shuffle_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962952328063700299006 /* legalize_vector_shuffle_pass.cpp */; };
+		B43C34A52408812200CB8A84 /* remove_opname_instruction_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961862328063600299006 /* remove_opname_instruction_reduction_opportunity_finder.cpp */; };
+		B43C34A62408812200CB8A84 /* relax_float_ops_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962692328063700299006 /* relax_float_ops_pass.cpp */; };
+		B43C34A72408812200CB8A84 /* process_lines_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962342328063700299006 /* process_lines_pass.cpp */; };
+		B43C34A82408812200CB8A84 /* build_module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961CB2328063700299006 /* build_module.cpp */; };
+		B43C34A92408812200CB8A84 /* amd_ext_to_khr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962602328063700299006 /* amd_ext_to_khr.cpp */; };
+		B43C34AA2408812200CB8A84 /* validate_execution_limitations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963162328063700299006 /* validate_execution_limitations.cpp */; };
+		B43C34AB2408812200CB8A84 /* private_to_local_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962582328063700299006 /* private_to_local_pass.cpp */; };
+		B43C34AC2408812200CB8A84 /* validate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962FC2328063700299006 /* validate.cpp */; };
+		B43C34AD2408812200CB8A84 /* validate_capability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F02328063700299006 /* validate_capability.cpp */; };
+		B43C34AE2408812200CB8A84 /* eliminate_dead_constant_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961ED2328063700299006 /* eliminate_dead_constant_pass.cpp */; };
+		B43C34AF2408812200CB8A84 /* unify_const_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962012328063700299006 /* unify_const_pass.cpp */; };
+		B43C34B02408812200CB8A84 /* reducer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961882328063600299006 /* reducer.cpp */; };
+		B43C34B12408812200CB8A84 /* optimizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961C32328063700299006 /* optimizer.cpp */; };
+		B43C34B22408812200CB8A84 /* software_version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961BD2328063700299006 /* software_version.cpp */; };
+		B43C34B32408812200CB8A84 /* replace_invalid_opc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962742328063700299006 /* replace_invalid_opc.cpp */; };
+		B43C34B42408812200CB8A84 /* instrument_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E32328063700299006 /* instrument_pass.cpp */; };
+		B43C34B52408812200CB8A84 /* basic_block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962862328063700299006 /* basic_block.cpp */; };
+		B43C34B62408812200CB8A84 /* vector_dce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962102328063700299006 /* vector_dce.cpp */; };
+		B43C34B72408812200CB8A84 /* spirv_fuzzer_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961A32328063700299006 /* spirv_fuzzer_options.cpp */; };
+		B43C34B82408812200CB8A84 /* strip_reflect_info_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979621A2328063700299006 /* strip_reflect_info_pass.cpp */; };
+		B43C34B92408812200CB8A84 /* graphics_robust_access_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979628B2328063700299006 /* graphics_robust_access_pass.cpp */; };
+		B43C34BA2408812200CB8A84 /* split_invalid_unreachable_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979620E2328063700299006 /* split_invalid_unreachable_pass.cpp */; };
+		B43C34BB2408812200CB8A84 /* change_operand_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979617B2328063600299006 /* change_operand_reduction_opportunity.cpp */; };
+		B43C34BC2408812200CB8A84 /* inst_bindless_check_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E02328063700299006 /* inst_bindless_check_pass.cpp */; };
+		B43C34BD2408812200CB8A84 /* validate_logicals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979630E2328063700299006 /* validate_logicals.cpp */; };
+		B43C34BE2408812200CB8A84 /* validate_memory_semantics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979630D2328063700299006 /* validate_memory_semantics.cpp */; };
+		B43C34BF2408812200CB8A84 /* dominator_analysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962772328063700299006 /* dominator_analysis.cpp */; };
+		B43C34C02408812200CB8A84 /* ext_inst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961C02328063700299006 /* ext_inst.cpp */; };
+		B43C34C12408812200CB8A84 /* validate_type.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963142328063700299006 /* validate_type.cpp */; };
+		B43C34C22408812200CB8A84 /* eliminate_dead_functions_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979620C2328063700299006 /* eliminate_dead_functions_pass.cpp */; };
+		B43C34C32408812200CB8A84 /* spirv_target_env.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961462328063600299006 /* spirv_target_env.cpp */; };
+		B43C34C42408812200CB8A84 /* ssa_rewrite_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961F32328063700299006 /* ssa_rewrite_pass.cpp */; };
+		B43C34C52408812200CB8A84 /* cfg_cleanup_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961EE2328063700299006 /* cfg_cleanup_pass.cpp */; };
+		B43C34C62408812200CB8A84 /* remove_selection_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961652328063600299006 /* remove_selection_reduction_opportunity.cpp */; };
+		B43C34C72408812200CB8A84 /* module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961FE2328063700299006 /* module.cpp */; };
+		B43C34C82408812200CB8A84 /* validate_builtins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962FA2328063700299006 /* validate_builtins.cpp */; };
+		B43C34C92408812200CB8A84 /* string_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979615A2328063600299006 /* string_utils.cpp */; };
+		B43C34CA2408812200CB8A84 /* validate_barriers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F22328063700299006 /* validate_barriers.cpp */; };
+		B43C34CB2408812200CB8A84 /* remove_duplicates_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961FB2328063700299006 /* remove_duplicates_pass.cpp */; };
+		B43C34CC2408812200CB8A84 /* loop_unroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962122328063700299006 /* loop_unroller.cpp */; };
+		B43C34CD2408812200CB8A84 /* inline_opaque_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962732328063700299006 /* inline_opaque_pass.cpp */; };
+		B43C34CE2408812200CB8A84 /* composite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962322328063700299006 /* composite.cpp */; };
+		B43C34CF2408812200CB8A84 /* local_single_block_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961DC2328063700299006 /* local_single_block_elim_pass.cpp */; };
+		B43C34D02408812200CB8A84 /* libspirv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962E22328063700299006 /* libspirv.cpp */; };
+		B43C34D12408812200CB8A84 /* parse_number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979615E2328063600299006 /* parse_number.cpp */; };
+		B43C34D22408812200CB8A84 /* validate_mode_setting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979630C2328063700299006 /* validate_mode_setting.cpp */; };
+		B43C34D32408812200CB8A84 /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963022328063700299006 /* function.cpp */; };
+		B43C34D42408812200CB8A84 /* copy_prop_arrays.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962412328063700299006 /* copy_prop_arrays.cpp */; };
+		B43C34D52408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979619A2328063700299006 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.cpp */; };
+		B43C34D62408812200CB8A84 /* validate_function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963192328063700299006 /* validate_function.cpp */; };
+		B43C34D72408812200CB8A84 /* const_folding_rules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961F02328063700299006 /* const_folding_rules.cpp */; };
+		B43C34D82408812200CB8A84 /* propagator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979625A2328063700299006 /* propagator.cpp */; };
+		B43C34D92408812200CB8A84 /* spirv_optimizer_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979619F2328063700299006 /* spirv_optimizer_options.cpp */; };
+		B43C34DA2408812200CB8A84 /* remove_block_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961972328063700299006 /* remove_block_reduction_opportunity_finder.cpp */; };
+		B43C34DB2408812200CB8A84 /* reduction_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979616C2328063600299006 /* reduction_util.cpp */; };
+		B43C34DC2408812200CB8A84 /* validate_non_uniform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F32328063700299006 /* validate_non_uniform.cpp */; };
+		B43C34DD2408812200CB8A84 /* ir_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962092328063700299006 /* ir_loader.cpp */; };
+		B43C34DE2408812200CB8A84 /* compact_ids_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962972328063700299006 /* compact_ids_pass.cpp */; };
+		B43C34DF2408812200CB8A84 /* folding_rules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962282328063700299006 /* folding_rules.cpp */; };
+		B43C34E02408812200CB8A84 /* eliminate_dead_functions_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962232328063700299006 /* eliminate_dead_functions_util.cpp */; };
+		B43C34E12408812200CB8A84 /* loop_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961C62328063700299006 /* loop_utils.cpp */; };
+		B43C34E22408812200CB8A84 /* decoration_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961DB2328063700299006 /* decoration_manager.cpp */; };
+		B43C34E32408812200CB8A84 /* validate_constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962FE2328063700299006 /* validate_constants.cpp */; };
+		B43C34E42408812200CB8A84 /* block_merge_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979624F2328063700299006 /* block_merge_pass.cpp */; };
+		B43C34E52408812200CB8A84 /* scalar_analysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979624D2328063700299006 /* scalar_analysis.cpp */; };
+		B43C34E62408812200CB8A84 /* text_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962EB2328063700299006 /* text_handler.cpp */; };
+		B43C34E72408812200CB8A84 /* validate_cfg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962EF2328063700299006 /* validate_cfg.cpp */; };
+		B43C34E82408812200CB8A84 /* spirv_validator_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961A52328063700299006 /* spirv_validator_options.cpp */; };
+		B43C34E92408812200CB8A84 /* workaround1209.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962672328063700299006 /* workaround1209.cpp */; };
+		B43C34EA2408812200CB8A84 /* simple_conditional_branch_to_branch_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961762328063600299006 /* simple_conditional_branch_to_branch_opportunity_finder.cpp */; };
+		B43C34EB2408812200CB8A84 /* change_operand_to_undef_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961902328063700299006 /* change_operand_to_undef_reduction_opportunity.cpp */; };
+		B43C34EC2408812200CB8A84 /* local_single_store_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962562328063700299006 /* local_single_store_elim_pass.cpp */; };
+		B43C34ED2408812200CB8A84 /* validate_scopes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F42328063700299006 /* validate_scopes.cpp */; };
+		B43C34EE2408812200CB8A84 /* instruction_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962312328063700299006 /* instruction_list.cpp */; };
+		B43C34EF2408812200CB8A84 /* inst_buff_addr_check_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962172328063700299006 /* inst_buff_addr_check_pass.cpp */; };
+		B43C34F02408812200CB8A84 /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962142328063700299006 /* constants.cpp */; };
+		B43C34F12408812200CB8A84 /* diagnostic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962E02328063700299006 /* diagnostic.cpp */; };
+		B43C34F22408812200CB8A84 /* strength_reduction_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979623D2328063700299006 /* strength_reduction_pass.cpp */; };
+		B43C34F32408812200CB8A84 /* ir_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979622A2328063700299006 /* ir_context.cpp */; };
+		B43C34F42408812200CB8A84 /* reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979618E2328063700299006 /* reduction_opportunity.cpp */; };
+		B43C34F52408812200CB8A84 /* strip_atomic_counter_memory_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961DA2328063700299006 /* strip_atomic_counter_memory_pass.cpp */; };
+		B43C34F62408812200CB8A84 /* pch_source_reduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961872328063600299006 /* pch_source_reduce.cpp */; };
+		B43C34F72408812200CB8A84 /* inline_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962072328063700299006 /* inline_pass.cpp */; };
+		B43C34F82408812200CB8A84 /* assembly_grammar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979614E2328063600299006 /* assembly_grammar.cpp */; };
+		B43C34F92408812200CB8A84 /* validate_arithmetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979630B2328063700299006 /* validate_arithmetics.cpp */; };
+		B43C34FA2408812200CB8A84 /* pch_source_opt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979621F2328063700299006 /* pch_source_opt.cpp */; };
+		B43C34FB2408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979619B2328063700299006 /* structured_loop_to_selection_reduction_opportunity.cpp */; };
+		B43C34FC2408812200CB8A84 /* convert_to_half_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962332328063700299006 /* convert_to_half_pass.cpp */; };
+		B43C34FD2408812200CB8A84 /* value_number_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962712328063700299006 /* value_number_table.cpp */; };
+		B43C34FE2408812200CB8A84 /* upgrade_memory_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979628F2328063700299006 /* upgrade_memory_model.cpp */; };
+		B43C34FF2408812200CB8A84 /* dead_insert_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979624B2328063700299006 /* dead_insert_elim_pass.cpp */; };
+		B43C35002408812200CB8A84 /* construct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963012328063700299006 /* construct.cpp */; };
+		B43C35012408812200CB8A84 /* bit_vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979615F2328063600299006 /* bit_vector.cpp */; };
+		B43C35022408812200CB8A84 /* validate_derivatives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979630F2328063700299006 /* validate_derivatives.cpp */; };
+		B43C35032408812200CB8A84 /* loop_dependence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961F42328063700299006 /* loop_dependence.cpp */; };
+		B43C35042408812200CB8A84 /* aggressive_dead_code_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962222328063700299006 /* aggressive_dead_code_elim_pass.cpp */; };
+		B43C35052408812200CB8A84 /* def_use_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962182328063700299006 /* def_use_manager.cpp */; };
+		B43C35062408812200CB8A84 /* validate_decorations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F82328063700299006 /* validate_decorations.cpp */; };
+		B43C35072408812200CB8A84 /* redundancy_elimination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962652328063700299006 /* redundancy_elimination.cpp */; };
+		B43C35082408812200CB8A84 /* simple_conditional_branch_to_branch_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961732328063600299006 /* simple_conditional_branch_to_branch_reduction_opportunity.cpp */; };
+		B43C35092408812200CB8A84 /* loop_unswitch_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962002328063700299006 /* loop_unswitch_pass.cpp */; };
+		B43C350A2408812200CB8A84 /* remove_unreferenced_instruction_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979617F2328063600299006 /* remove_unreferenced_instruction_reduction_opportunity_finder.cpp */; };
+		B43C350B2408812200CB8A84 /* parsed_operand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961B52328063700299006 /* parsed_operand.cpp */; };
+		B43C350C2408812200CB8A84 /* scalar_replacement_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962622328063700299006 /* scalar_replacement_pass.cpp */; };
+		B43C350D2408812200CB8A84 /* extensions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961502328063600299006 /* extensions.cpp */; };
+		B43C350E2408812200CB8A84 /* validate_memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963102328063700299006 /* validate_memory.cpp */; };
+		B43C350F2408812200CB8A84 /* name_mapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961B82328063700299006 /* name_mapper.cpp */; };
+		B43C35102408812200CB8A84 /* spirv_endian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961AA2328063700299006 /* spirv_endian.cpp */; };
+		B43C35112408812200CB8A84 /* validate_debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F92328063700299006 /* validate_debug.cpp */; };
+		B43C35122408812200CB8A84 /* local_redundancy_elimination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E12328063700299006 /* local_redundancy_elimination.cpp */; };
+		B43C35132408812200CB8A84 /* feature_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E62328063700299006 /* feature_manager.cpp */; };
+		B43C35142408812200CB8A84 /* generate_webgpu_initializers_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962032328063700299006 /* generate_webgpu_initializers_pass.cpp */; };
+		B43C35152408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961782328063600299006 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.cpp */; };
+		B43C35162408812200CB8A84 /* set_spec_constant_default_value_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979625D2328063700299006 /* set_spec_constant_default_value_pass.cpp */; };
+		B43C35172408812200CB8A84 /* validate_bitwise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962FF2328063700299006 /* validate_bitwise.cpp */; };
+		B43C35182408812200CB8A84 /* strip_debug_info_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961F22328063700299006 /* strip_debug_info_pass.cpp */; };
+		B43C35192408812200CB8A84 /* fold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979625F2328063700299006 /* fold.cpp */; };
+		B43C351A2408812200CB8A84 /* mem_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961F92328063700299006 /* mem_pass.cpp */; };
+		B43C351B2408812200CB8A84 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961D62328063700299006 /* types.cpp */; };
+		B43C351C2408812200CB8A84 /* enum_string_mapping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961B02328063700299006 /* enum_string_mapping.cpp */; };
+		B43C351D2408812200CB8A84 /* reduce_load_size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979626E2328063700299006 /* reduce_load_size.cpp */; };
+		B43C351E2408812200CB8A84 /* print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961A72328063700299006 /* print.cpp */; };
+		B43C351F2408812200CB8A84 /* loop_peeling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962982328063700299006 /* loop_peeling.cpp */; };
+		B43C35202408812200CB8A84 /* reduction_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961682328063600299006 /* reduction_pass.cpp */; };
+		B43C35212408812200CB8A84 /* flatten_decoration_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962262328063700299006 /* flatten_decoration_pass.cpp */; };
+		B43C35222408812200CB8A84 /* validate_adjacency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963042328063700299006 /* validate_adjacency.cpp */; };
+		B43C35232408812200CB8A84 /* operand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962E62328063700299006 /* operand.cpp */; };
+		B43C35242408812200CB8A84 /* if_conversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962392328063700299006 /* if_conversion.cpp */; };
+		B43C35252408812200CB8A84 /* validate_annotation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962ED2328063700299006 /* validate_annotation.cpp */; };
+		B43C35262408812200CB8A84 /* validate_id.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963092328063700299006 /* validate_id.cpp */; };
+		B43C35272408812200CB8A84 /* dominator_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961E92328063700299006 /* dominator_tree.cpp */; };
+		B43C35282408812200CB8A84 /* licm_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979620B2328063700299006 /* licm_pass.cpp */; };
+		B43C35292408812200CB8A84 /* validate_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963112328063700299006 /* validate_image.cpp */; };
+		B43C352A2408812200CB8A84 /* register_pressure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961C52328063700299006 /* register_pressure.cpp */; };
+		B43C352B2408812200CB8A84 /* validate_interfaces.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962FB2328063700299006 /* validate_interfaces.cpp */; };
+		B43C352C2408812200CB8A84 /* eliminate_dead_members_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979623C2328063700299006 /* eliminate_dead_members_pass.cpp */; };
+		B43C352D2408812200CB8A84 /* linker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961BC2328063700299006 /* linker.cpp */; };
+		B43C352E2408812200CB8A84 /* remove_block_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979619C2328063700299006 /* remove_block_reduction_opportunity.cpp */; };
+		B43C352F2408812200CB8A84 /* inline_exhaustive_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962432328063700299006 /* inline_exhaustive_pass.cpp */; };
+		B43C35302408812200CB8A84 /* simplification_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962242328063700299006 /* simplification_pass.cpp */; };
+		B43C35312408812200CB8A84 /* scalar_analysis_simplification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962922328063700299006 /* scalar_analysis_simplification.cpp */; };
+		B43C35322408812200CB8A84 /* validate_primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979631D2328063700299006 /* validate_primitives.cpp */; };
+		B43C35332408812200CB8A84 /* disassemble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962E92328063700299006 /* disassemble.cpp */; };
+		B43C35342408812200CB8A84 /* loop_dependence_helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979625C2328063700299006 /* loop_dependence_helpers.cpp */; };
+		B43C35352408812200CB8A84 /* type_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962022328063700299006 /* type_manager.cpp */; };
+		B43C35362408812200CB8A84 /* validate_conversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97963052328063700299006 /* validate_conversion.cpp */; };
+		B43C35372408812200CB8A84 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961582328063600299006 /* timer.cpp */; };
+		B43C35382408812200CB8A84 /* remove_selection_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961772328063600299006 /* remove_selection_reduction_opportunity_finder.cpp */; };
+		B43C35392408812200CB8A84 /* combine_access_chains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961CA2328063700299006 /* combine_access_chains.cpp */; };
+		B43C353A2408812200CB8A84 /* validate_instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97962F72328063700299006 /* validate_instruction.cpp */; };
+		B43C353B2408812200CB8A84 /* block_merge_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979623F2328063700299006 /* block_merge_util.cpp */; };
+		B43C353C2408812200CB8A84 /* remove_function_reduction_opportunity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961742328063600299006 /* remove_function_reduction_opportunity.cpp */; };
+		B43C353D2408812200CB8A84 /* operand_to_const_reduction_opportunity_finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A97961692328063600299006 /* operand_to_const_reduction_opportunity_finder.cpp */; };
+		B43C353E2408812200CB8A84 /* local_ssa_elim_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A979622E2328063700299006 /* local_ssa_elim_pass.cpp */; };
+		B43C35F82408A19600CB8A84 /* ConstantUnion.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2A21CED9060013AB25 /* ConstantUnion.h */; };
+		B43C35F92408A19600CB8A84 /* arrays.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2721CED9060013AB25 /* arrays.h */; };
+		B43C35FA2408A19600CB8A84 /* SpvBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = A972ABFB21CED9060013AB25 /* SpvBuilder.h */; };
+		B43C35FB2408A19600CB8A84 /* GLSL.ext.EXT.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0521CED9060013AB25 /* GLSL.ext.EXT.h */; };
+		B43C35FC2408A19600CB8A84 /* gl_types.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3121CED9060013AB25 /* gl_types.h */; };
+		B43C35FD2408A19600CB8A84 /* Versions.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3F21CED9060013AB25 /* Versions.h */; };
+		B43C35FE2408A19600CB8A84 /* osinclude.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC1A21CED9060013AB25 /* osinclude.h */; };
+		B43C35FF2408A19600CB8A84 /* PpTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5721CED9060013AB25 /* PpTokens.h */; };
+		B43C36002408A19600CB8A84 /* GLSL.ext.AMD.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0121CED9060013AB25 /* GLSL.ext.AMD.h */; };
+		B43C36012408A19600CB8A84 /* disassemble.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0B21CED9060013AB25 /* disassemble.h */; };
+		B43C36022408A19600CB8A84 /* RemoveTree.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3921CED9060013AB25 /* RemoveTree.h */; };
+		B43C36032408A19600CB8A84 /* PoolAlloc.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2C21CED9060013AB25 /* PoolAlloc.h */; };
+		B43C36042408A19600CB8A84 /* SpvTools.h in Headers */ = {isa = PBXBuildFile; fileRef = A972ABFE21CED9060013AB25 /* SpvTools.h */; };
+		B43C36052408A19600CB8A84 /* ShHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2621CED9060013AB25 /* ShHandle.h */; };
+		B43C36062408A19600CB8A84 /* LiveTraverser.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC4B21CED9060013AB25 /* LiveTraverser.h */; };
+		B43C36072408A19600CB8A84 /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC1121CED9060013AB25 /* Logger.h */; };
+		B43C36082408A19600CB8A84 /* Scan.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5F21CED9060013AB25 /* Scan.h */; };
+		B43C36092408A19600CB8A84 /* InitializeGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2521CED9060013AB25 /* InitializeGlobals.h */; };
+		B43C360A2408A19600CB8A84 /* InfoSink.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2B21CED9060013AB25 /* InfoSink.h */; };
+		B43C360B2408A19600CB8A84 /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2121CED9060013AB25 /* Types.h */; };
+		B43C360C2408A19600CB8A84 /* spirv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0321CED9060013AB25 /* spirv.hpp */; };
+		B43C360D2408A19600CB8A84 /* localintermediate.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3621CED9060013AB25 /* localintermediate.h */; };
+		B43C360E2408A19600CB8A84 /* SymbolTable.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC4521CED9060013AB25 /* SymbolTable.h */; };
+		B43C360F2408A19600CB8A84 /* GLSL.ext.KHR.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0621CED9060013AB25 /* GLSL.ext.KHR.h */; };
+		B43C36102408A19600CB8A84 /* parseVersions.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3021CED9060013AB25 /* parseVersions.h */; };
+		B43C36112408A19600CB8A84 /* Initialize.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC4C21CED9060013AB25 /* Initialize.h */; };
+		B43C36122408A19600CB8A84 /* GLSL.ext.NV.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0721CED9060013AB25 /* GLSL.ext.NV.h */; };
+		B43C36132408A19600CB8A84 /* InitializeDll.h in Headers */ = {isa = PBXBuildFile; fileRef = A972ABF721CED9060013AB25 /* InitializeDll.h */; };
+		B43C36142408A19600CB8A84 /* iomapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3521CED9060013AB25 /* iomapper.h */; };
+		B43C36152408A19600CB8A84 /* GlslangToSpv.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0C21CED9060013AB25 /* GlslangToSpv.h */; };
+		B43C36162408A19600CB8A84 /* propagateNoContraction.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3E21CED9060013AB25 /* propagateNoContraction.h */; };
+		B43C36172408A19600CB8A84 /* SPVRemapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A972ABFA21CED9060013AB25 /* SPVRemapper.h */; };
+		B43C36182408A19600CB8A84 /* ScanContext.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3421CED9060013AB25 /* ScanContext.h */; };
+		B43C36192408A19600CB8A84 /* doc.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0221CED9060013AB25 /* doc.h */; };
+		B43C361A2408A19600CB8A84 /* ShaderLang.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC6121CED9060013AB25 /* ShaderLang.h */; };
+		B43C361B2408A19600CB8A84 /* revision.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2421CED9060013AB25 /* revision.h */; };
+		B43C361C2408A19600CB8A84 /* GLSL.std.450.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0D21CED9060013AB25 /* GLSL.std.450.h */; };
+		B43C361D2408A19600CB8A84 /* BaseTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2321CED9060013AB25 /* BaseTypes.h */; };
+		B43C361E2408A19600CB8A84 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2821CED9060013AB25 /* Common.h */; };
+		B43C361F2408A19600CB8A84 /* glslang_tab.cpp.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC4A21CED9060013AB25 /* glslang_tab.cpp.h */; };
+		B43C36202408A19600CB8A84 /* spvIR.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0921CED9060013AB25 /* spvIR.h */; };
+		B43C36212408A19600CB8A84 /* hex_float.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC1021CED9060013AB25 /* hex_float.h */; };
+		B43C36222408A19600CB8A84 /* intermediate.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2221CED9060013AB25 /* intermediate.h */; };
+		B43C36232408A19600CB8A84 /* ResourceLimits.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC2021CED9060013AB25 /* ResourceLimits.h */; };
+		B43C36242408A19600CB8A84 /* ParseHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5421CED9060013AB25 /* ParseHelper.h */; };
+		B43C36252408A19600CB8A84 /* PpContext.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5921CED9060013AB25 /* PpContext.h */; };
+		B43C36262408A19600CB8A84 /* pch.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC3321CED9060013AB25 /* pch.h */; };
+		B43C36272408A19600CB8A84 /* bitutils.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC0A21CED9060013AB25 /* bitutils.h */; };
+		B43C36282408A19600CB8A84 /* reflection.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5E21CED9060013AB25 /* reflection.h */; };
+		B43C36292408A19600CB8A84 /* attribute.h in Headers */ = {isa = PBXBuildFile; fileRef = A972AC5021CED9060013AB25 /* attribute.h */; };
+		B43C362B2408A19600CB8A84 /* SPVRemapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC0E21CED9060013AB25 /* SPVRemapper.cpp */; };
+		B43C362C2408A19600CB8A84 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC0F21CED9060013AB25 /* Logger.cpp */; };
+		B43C362D2408A19600CB8A84 /* parseConst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3D21CED9060013AB25 /* parseConst.cpp */; };
+		B43C362E2408A19600CB8A84 /* iomapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4221CED9060013AB25 /* iomapper.cpp */; };
+		B43C362F2408A19600CB8A84 /* glslang_tab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3B21CED9060013AB25 /* glslang_tab.cpp */; };
+		B43C36302408A19600CB8A84 /* ossource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC1821CED9060013AB25 /* ossource.cpp */; };
+		B43C36312408A19600CB8A84 /* SpvPostProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972ABFD21CED9060013AB25 /* SpvPostProcess.cpp */; };
+		B43C36322408A19600CB8A84 /* Link.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC6421CED9060013AB25 /* Link.cpp */; };
+		B43C36332408A19600CB8A84 /* PpAtom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5621CED9060013AB25 /* PpAtom.cpp */; };
+		B43C36342408A19600CB8A84 /* attribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4D21CED9060013AB25 /* attribute.cpp */; };
+		B43C36352408A19600CB8A84 /* pch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4821CED9060013AB25 /* pch.cpp */; };
+		B43C36362408A19600CB8A84 /* InitializeDll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972ABF821CED9060013AB25 /* InitializeDll.cpp */; };
+		B43C36372408A19600CB8A84 /* limits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3C21CED9060013AB25 /* limits.cpp */; };
+		B43C36382408A19600CB8A84 /* Pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5821CED9060013AB25 /* Pp.cpp */; };
+		B43C36392408A19600CB8A84 /* ParseContextBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5D21CED9060013AB25 /* ParseContextBase.cpp */; };
+		B43C363A2408A19600CB8A84 /* Versions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5121CED9060013AB25 /* Versions.cpp */; };
+		B43C363B2408A19600CB8A84 /* reflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4E21CED9060013AB25 /* reflection.cpp */; };
+		B43C363C2408A19600CB8A84 /* SpvBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC0421CED9060013AB25 /* SpvBuilder.cpp */; };
+		B43C363D2408A19600CB8A84 /* RemoveTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4F21CED9060013AB25 /* RemoveTree.cpp */; };
+		B43C363E2408A19600CB8A84 /* SymbolTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4921CED9060013AB25 /* SymbolTable.cpp */; };
+		B43C363F2408A19600CB8A84 /* SpvTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972ABFF21CED9060013AB25 /* SpvTools.cpp */; };
+		B43C36402408A19600CB8A84 /* Intermediate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4721CED9060013AB25 /* Intermediate.cpp */; };
+		B43C36412408A19600CB8A84 /* Scan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3721CED9060013AB25 /* Scan.cpp */; };
+		B43C36422408A19600CB8A84 /* PpContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5B21CED9060013AB25 /* PpContext.cpp */; };
+		B43C36432408A19600CB8A84 /* doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC1221CED9060013AB25 /* doc.cpp */; };
+		B43C36442408A19600CB8A84 /* ParseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC2F21CED9060013AB25 /* ParseHelper.cpp */; };
+		B43C36452408A19600CB8A84 /* propagateNoContraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3221CED9060013AB25 /* propagateNoContraction.cpp */; };
+		B43C36462408A19600CB8A84 /* PpTokens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5A21CED9060013AB25 /* PpTokens.cpp */; };
+		B43C36472408A19600CB8A84 /* PpScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5C21CED9060013AB25 /* PpScanner.cpp */; };
+		B43C36482408A19600CB8A84 /* Initialize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC3A21CED9060013AB25 /* Initialize.cpp */; };
+		B43C36492408A19600CB8A84 /* IntermTraverse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4021CED9060013AB25 /* IntermTraverse.cpp */; };
+		B43C364A2408A19600CB8A84 /* ShaderLang.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4421CED9060013AB25 /* ShaderLang.cpp */; };
+		B43C364B2408A19600CB8A84 /* disassemble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC1321CED9060013AB25 /* disassemble.cpp */; };
+		B43C364C2408A19600CB8A84 /* Constant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5221CED9060013AB25 /* Constant.cpp */; };
+		B43C364D2408A19600CB8A84 /* GlslangToSpv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC0821CED9060013AB25 /* GlslangToSpv.cpp */; };
+		B43C364E2408A19600CB8A84 /* intermOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4121CED9060013AB25 /* intermOut.cpp */; };
+		B43C364F2408A19600CB8A84 /* linkValidate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC5321CED9060013AB25 /* linkValidate.cpp */; };
+		B43C36502408A19600CB8A84 /* InfoSink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4621CED9060013AB25 /* InfoSink.cpp */; };
+		B43C36512408A19600CB8A84 /* CodeGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC6321CED9060013AB25 /* CodeGen.cpp */; };
+		B43C36522408A19600CB8A84 /* InReadableOrder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC0021CED9060013AB25 /* InReadableOrder.cpp */; };
+		B43C36532408A19600CB8A84 /* PoolAlloc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A972AC4321CED9060013AB25 /* PoolAlloc.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1626,6 +2122,9 @@
 		A979631E2328063700299006 /* decoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoration.h; sourceTree = "<group>"; };
 		A9C2104521D14FD7006BA2D3 /* fetchDependencies */ = {isa = PBXFileReference; lastKnownFileType = text; path = fetchDependencies; sourceTree = "<group>"; };
 		A9C2104721D15843006BA2D3 /* ExternalRevisions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ExternalRevisions; sourceTree = "<group>"; };
+		B43C33B52408809300CB8A84 /* libSPIRV-Cross-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSPIRV-Cross-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43C35422408812200CB8A84 /* libSPIRV-Tools-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSPIRV-Tools-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43C36572408A19600CB8A84 /* libglslang-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libglslang-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -2331,6 +2830,9 @@
 				A90FD9E921CC519E00B92BB2 /* External */,
 				A9679AAB21D2699800856BF7 /* Scripts */,
 				A972AD2421CEE30F0013AB25 /* Products */,
+				B43C33B52408809300CB8A84 /* libSPIRV-Cross-tvOS.a */,
+				B43C35422408812200CB8A84 /* libSPIRV-Tools-tvOS.a */,
+				B43C36572408A19600CB8A84 /* libglslang-tvOS.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2871,6 +3373,273 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B43C33A12408809300CB8A84 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C33A22408809300CB8A84 /* spirv_cfg.hpp in Headers */,
+				B43C33A32408809300CB8A84 /* spirv_cross_parsed_ir.hpp in Headers */,
+				B43C33A42408809300CB8A84 /* spirv_common.hpp in Headers */,
+				B43C33A52408809300CB8A84 /* spirv_glsl.hpp in Headers */,
+				B43C33A62408809300CB8A84 /* spirv_parser.hpp in Headers */,
+				B43C33A72408809300CB8A84 /* spirv_cross.hpp in Headers */,
+				B43C33A82408809300CB8A84 /* spirv_msl.hpp in Headers */,
+				B43C33A92408809300CB8A84 /* spirv_reflect.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B43C33B72408812200CB8A84 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C33B82408812200CB8A84 /* spirv_optimizer_options.h in Headers */,
+				B43C33B92408812200CB8A84 /* inline_exhaustive_pass.h in Headers */,
+				B43C33BA2408812200CB8A84 /* types.h in Headers */,
+				B43C33BB2408812200CB8A84 /* loop_peeling.h in Headers */,
+				B43C33BC2408812200CB8A84 /* operand_to_undef_reduction_opportunity_finder.h in Headers */,
+				B43C33BD2408812200CB8A84 /* loop_unswitch_pass.h in Headers */,
+				B43C33BE2408812200CB8A84 /* loop_descriptor.h in Headers */,
+				B43C33BF2408812200CB8A84 /* loop_dependence.h in Headers */,
+				B43C33C02408812200CB8A84 /* dead_insert_elim_pass.h in Headers */,
+				B43C33C12408812200CB8A84 /* redundancy_elimination.h in Headers */,
+				B43C33C22408812200CB8A84 /* block_merge_pass.h in Headers */,
+				B43C33C32408812200CB8A84 /* ccp_pass.h in Headers */,
+				B43C33C42408812200CB8A84 /* ssa_rewrite_pass.h in Headers */,
+				B43C33C52408812200CB8A84 /* dead_branch_elim_pass.h in Headers */,
+				B43C33C62408812200CB8A84 /* operand.h in Headers */,
+				B43C33C72408812200CB8A84 /* remove_block_reduction_opportunity_finder.h in Headers */,
+				B43C33C82408812200CB8A84 /* desc_sroa.h in Headers */,
+				B43C33C92408812200CB8A84 /* inline_pass.h in Headers */,
+				B43C33CA2408812200CB8A84 /* process_lines_pass.h in Headers */,
+				B43C33CB2408812200CB8A84 /* fold.h in Headers */,
+				B43C33CC2408812200CB8A84 /* validate.h in Headers */,
+				B43C33CD2408812200CB8A84 /* eliminate_dead_constant_pass.h in Headers */,
+				B43C33CE2408812200CB8A84 /* extensions.h in Headers */,
+				B43C33CF2408812200CB8A84 /* macro.h in Headers */,
+				B43C33D02408812200CB8A84 /* reduction_opportunity_finder.h in Headers */,
+				B43C33D12408812200CB8A84 /* cfa.h in Headers */,
+				B43C33D22408812200CB8A84 /* convert_to_half_pass.h in Headers */,
+				B43C33D32408812200CB8A84 /* composite.h in Headers */,
+				B43C33D42408812200CB8A84 /* pass.h in Headers */,
+				B43C33D52408812200CB8A84 /* reducer.h in Headers */,
+				B43C33D62408812200CB8A84 /* ext_inst.h in Headers */,
+				B43C33D72408812200CB8A84 /* table.h in Headers */,
+				B43C33D82408812200CB8A84 /* loop_fission.h in Headers */,
+				B43C33D92408812200CB8A84 /* mem_pass.h in Headers */,
+				B43C33DA2408812200CB8A84 /* split_invalid_unreachable_pass.h in Headers */,
+				B43C33DB2408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity_finder.h in Headers */,
+				B43C33DC2408812200CB8A84 /* vector_dce.h in Headers */,
+				B43C33DD2408812200CB8A84 /* local_ssa_elim_pass.h in Headers */,
+				B43C33DE2408812200CB8A84 /* graphics_robust_access_pass.h in Headers */,
+				B43C33DF2408812200CB8A84 /* remove_selection_reduction_opportunity_finder.h in Headers */,
+				B43C33E02408812200CB8A84 /* block_merge_util.h in Headers */,
+				B43C33E12408812200CB8A84 /* diagnostic.h in Headers */,
+				B43C33E22408812200CB8A84 /* dominator_tree.h in Headers */,
+				B43C33E32408812200CB8A84 /* instruction.h in Headers */,
+				B43C33E42408812200CB8A84 /* remove_function_reduction_opportunity_finder.h in Headers */,
+				B43C33E52408812200CB8A84 /* inst_bindless_check_pass.h in Headers */,
+				B43C33E62408812200CB8A84 /* propagator.h in Headers */,
+				B43C33E72408812200CB8A84 /* latest_version_glsl_std_450_header.h in Headers */,
+				B43C33E82408812200CB8A84 /* name_mapper.h in Headers */,
+				B43C33E92408812200CB8A84 /* instruction.h in Headers */,
+				B43C33EA2408812200CB8A84 /* unify_const_pass.h in Headers */,
+				B43C33EB2408812200CB8A84 /* struct_cfg_analysis.h in Headers */,
+				B43C33EC2408812200CB8A84 /* iterator.h in Headers */,
+				B43C33ED2408812200CB8A84 /* private_to_local_pass.h in Headers */,
+				B43C33EE2408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.h in Headers */,
+				B43C33EF2408812200CB8A84 /* disassemble.h in Headers */,
+				B43C33F02408812200CB8A84 /* simple_conditional_branch_to_branch_opportunity_finder.h in Headers */,
+				B43C33F12408812200CB8A84 /* eliminate_dead_functions_pass.h in Headers */,
+				B43C33F22408812200CB8A84 /* feature_manager.h in Headers */,
+				B43C33F32408812200CB8A84 /* remove_opname_instruction_reduction_opportunity_finder.h in Headers */,
+				B43C33F42408812200CB8A84 /* instrument_pass.h in Headers */,
+				B43C33F52408812200CB8A84 /* type_manager.h in Headers */,
+				B43C33F62408812200CB8A84 /* loop_unroller.h in Headers */,
+				B43C33F72408812200CB8A84 /* local_single_block_elim_pass.h in Headers */,
+				B43C33F82408812200CB8A84 /* latest_version_spirv_header.h in Headers */,
+				B43C33F92408812200CB8A84 /* value_number_table.h in Headers */,
+				B43C33FA2408812200CB8A84 /* validate_scopes.h in Headers */,
+				B43C33FB2408812200CB8A84 /* decompose_initialized_variables_pass.h in Headers */,
+				B43C33FC2408812200CB8A84 /* function.h in Headers */,
+				B43C33FD2408812200CB8A84 /* simplification_pass.h in Headers */,
+				B43C33FE2408812200CB8A84 /* strip_debug_info_pass.h in Headers */,
+				B43C33FF2408812200CB8A84 /* bitutils.h in Headers */,
+				B43C34002408812200CB8A84 /* spirv_target_env.h in Headers */,
+				B43C34012408812200CB8A84 /* spirv_reducer_options.h in Headers */,
+				B43C34022408812200CB8A84 /* make_unique.h in Headers */,
+				B43C34032408812200CB8A84 /* log.h in Headers */,
+				B43C34042408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity.h in Headers */,
+				B43C34052408812200CB8A84 /* upgrade_memory_model.h in Headers */,
+				B43C34062408812200CB8A84 /* loop_fusion_pass.h in Headers */,
+				B43C34072408812200CB8A84 /* remove_instruction_reduction_opportunity.h in Headers */,
+				B43C34082408812200CB8A84 /* spirv_constant.h in Headers */,
+				B43C34092408812200CB8A84 /* combine_access_chains.h in Headers */,
+				B43C340A2408812200CB8A84 /* eliminate_dead_functions_util.h in Headers */,
+				B43C340B2408812200CB8A84 /* flatten_decoration_pass.h in Headers */,
+				B43C340C2408812200CB8A84 /* fix_storage_class.h in Headers */,
+				B43C340D2408812200CB8A84 /* assembly_grammar.h in Headers */,
+				B43C340E2408812200CB8A84 /* passes.h in Headers */,
+				B43C340F2408812200CB8A84 /* local_redundancy_elimination.h in Headers */,
+				B43C34102408812200CB8A84 /* instruction.h in Headers */,
+				B43C34112408812200CB8A84 /* dead_variable_elimination.h in Headers */,
+				B43C34122408812200CB8A84 /* basic_block.h in Headers */,
+				B43C34132408812200CB8A84 /* local_single_store_elim_pass.h in Headers */,
+				B43C34142408812200CB8A84 /* remove_block_reduction_opportunity.h in Headers */,
+				B43C34152408812200CB8A84 /* construct.h in Headers */,
+				B43C34162408812200CB8A84 /* opcode.h in Headers */,
+				B43C34172408812200CB8A84 /* function.h in Headers */,
+				B43C34182408812200CB8A84 /* scalar_analysis.h in Headers */,
+				B43C34192408812200CB8A84 /* aggressive_dead_code_elim_pass.h in Headers */,
+				B43C341A2408812200CB8A84 /* fold_spec_constant_op_and_composite_pass.h in Headers */,
+				B43C341B2408812200CB8A84 /* reduction_pass.h in Headers */,
+				B43C341C2408812200CB8A84 /* merge_blocks_reduction_opportunity_finder.h in Headers */,
+				B43C341D2408812200CB8A84 /* legalize_vector_shuffle_pass.h in Headers */,
+				B43C341E2408812200CB8A84 /* latest_version_opencl_std_header.h in Headers */,
+				B43C341F2408812200CB8A84 /* text_handler.h in Headers */,
+				B43C34202408812200CB8A84 /* remove_duplicates_pass.h in Headers */,
+				B43C34212408812200CB8A84 /* remove_unreferenced_instruction_reduction_opportunity_finder.h in Headers */,
+				B43C34222408812200CB8A84 /* decoration.h in Headers */,
+				B43C34232408812200CB8A84 /* instruction_list.h in Headers */,
+				B43C34242408812200CB8A84 /* eliminate_dead_members_pass.h in Headers */,
+				B43C34252408812200CB8A84 /* tree_iterator.h in Headers */,
+				B43C34262408812200CB8A84 /* validation_state.h in Headers */,
+				B43C34272408812200CB8A84 /* reflect.h in Headers */,
+				B43C34282408812200CB8A84 /* ir_loader.h in Headers */,
+				B43C34292408812200CB8A84 /* pch_source_reduce.h in Headers */,
+				B43C342A2408812200CB8A84 /* set_spec_constant_default_value_pass.h in Headers */,
+				B43C342B2408812200CB8A84 /* scalar_replacement_pass.h in Headers */,
+				B43C342C2408812200CB8A84 /* simple_conditional_branch_to_branch_reduction_opportunity.h in Headers */,
+				B43C342D2408812200CB8A84 /* remove_function_reduction_opportunity.h in Headers */,
+				B43C342E2408812200CB8A84 /* timer.h in Headers */,
+				B43C342F2408812200CB8A84 /* ilist.h in Headers */,
+				B43C34302408812200CB8A84 /* inst_buff_addr_check_pass.h in Headers */,
+				B43C34312408812200CB8A84 /* merge_return_pass.h in Headers */,
+				B43C34322408812200CB8A84 /* reduction_util.h in Headers */,
+				B43C34332408812200CB8A84 /* small_vector.h in Headers */,
+				B43C34342408812200CB8A84 /* binary.h in Headers */,
+				B43C34352408812200CB8A84 /* decoration_manager.h in Headers */,
+				B43C34362408812200CB8A84 /* freeze_spec_constant_value_pass.h in Headers */,
+				B43C34372408812200CB8A84 /* workaround1209.h in Headers */,
+				B43C34382408812200CB8A84 /* hex_float.h in Headers */,
+				B43C34392408812200CB8A84 /* basic_block.h in Headers */,
+				B43C343A2408812200CB8A84 /* cfg.h in Headers */,
+				B43C343B2408812200CB8A84 /* merge_blocks_reduction_opportunity.h in Headers */,
+				B43C343C2408812200CB8A84 /* text.h in Headers */,
+				B43C343D2408812200CB8A84 /* inline_opaque_pass.h in Headers */,
+				B43C343E2408812200CB8A84 /* loop_utils.h in Headers */,
+				B43C343F2408812200CB8A84 /* strength_reduction_pass.h in Headers */,
+				B43C34402408812200CB8A84 /* pch_source.h in Headers */,
+				B43C34412408812200CB8A84 /* const_folding_rules.h in Headers */,
+				B43C34422408812200CB8A84 /* enum_string_mapping.h in Headers */,
+				B43C34432408812200CB8A84 /* string_utils.h in Headers */,
+				B43C34442408812200CB8A84 /* operand_to_dominating_id_reduction_opportunity_finder.h in Headers */,
+				B43C34452408812200CB8A84 /* spirv_endian.h in Headers */,
+				B43C34462408812200CB8A84 /* loop_fusion.h in Headers */,
+				B43C34472408812200CB8A84 /* parse_number.h in Headers */,
+				B43C34482408812200CB8A84 /* build_module.h in Headers */,
+				B43C34492408812200CB8A84 /* spirv_fuzzer_options.h in Headers */,
+				B43C344A2408812200CB8A84 /* remove_relaxed_precision_decoration_opportunity_finder.h in Headers */,
+				B43C344B2408812200CB8A84 /* ilist_node.h in Headers */,
+				B43C344C2408812200CB8A84 /* enum_set.h in Headers */,
+				B43C344D2408812200CB8A84 /* register_pressure.h in Headers */,
+				B43C344E2408812200CB8A84 /* module.h in Headers */,
+				B43C344F2408812200CB8A84 /* copy_prop_arrays.h in Headers */,
+				B43C34502408812200CB8A84 /* spirv_validator_options.h in Headers */,
+				B43C34512408812200CB8A84 /* pch_source_opt.h in Headers */,
+				B43C34522408812200CB8A84 /* spirv_definition.h in Headers */,
+				B43C34532408812200CB8A84 /* def_use_manager.h in Headers */,
+				B43C34542408812200CB8A84 /* scalar_analysis_nodes.h in Headers */,
+				B43C34552408812200CB8A84 /* change_operand_to_undef_reduction_opportunity.h in Headers */,
+				B43C34562408812200CB8A84 /* compact_ids_pass.h in Headers */,
+				B43C34572408812200CB8A84 /* null_pass.h in Headers */,
+				B43C34582408812200CB8A84 /* change_operand_reduction_opportunity.h in Headers */,
+				B43C34592408812200CB8A84 /* reduction_opportunity.h in Headers */,
+				B43C345A2408812200CB8A84 /* local_access_chain_convert_pass.h in Headers */,
+				B43C345B2408812200CB8A84 /* print.h in Headers */,
+				B43C345C2408812200CB8A84 /* operand_to_const_reduction_opportunity_finder.h in Headers */,
+				B43C345D2408812200CB8A84 /* if_conversion.h in Headers */,
+				B43C345E2408812200CB8A84 /* folding_rules.h in Headers */,
+				B43C345F2408812200CB8A84 /* pass_manager.h in Headers */,
+				B43C34602408812200CB8A84 /* strip_reflect_info_pass.h in Headers */,
+				B43C34612408812200CB8A84 /* code_sink.h in Headers */,
+				B43C34622408812200CB8A84 /* wrap_opkill.h in Headers */,
+				B43C34632408812200CB8A84 /* strip_atomic_counter_memory_pass.h in Headers */,
+				B43C34642408812200CB8A84 /* ir_builder.h in Headers */,
+				B43C34652408812200CB8A84 /* remove_selection_reduction_opportunity.h in Headers */,
+				B43C34662408812200CB8A84 /* parsed_operand.h in Headers */,
+				B43C34672408812200CB8A84 /* bit_vector.h in Headers */,
+				B43C34682408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.h in Headers */,
+				B43C34692408812200CB8A84 /* validate_memory_semantics.h in Headers */,
+				B43C346A2408812200CB8A84 /* replace_invalid_opc.h in Headers */,
+				B43C346B2408812200CB8A84 /* dominator_analysis.h in Headers */,
+				B43C346C2408812200CB8A84 /* constants.h in Headers */,
+				B43C346D2408812200CB8A84 /* relax_float_ops_pass.h in Headers */,
+				B43C346E2408812200CB8A84 /* reduce_load_size.h in Headers */,
+				B43C346F2408812200CB8A84 /* cfg_cleanup_pass.h in Headers */,
+				B43C34702408812200CB8A84 /* generate_webgpu_initializers_pass.h in Headers */,
+				B43C34712408812200CB8A84 /* amd_ext_to_khr.h in Headers */,
+				B43C34722408812200CB8A84 /* licm_pass.h in Headers */,
+				B43C34732408812200CB8A84 /* ir_context.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B43C35F72408A19600CB8A84 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C35F82408A19600CB8A84 /* ConstantUnion.h in Headers */,
+				B43C35F92408A19600CB8A84 /* arrays.h in Headers */,
+				B43C35FA2408A19600CB8A84 /* SpvBuilder.h in Headers */,
+				B43C35FB2408A19600CB8A84 /* GLSL.ext.EXT.h in Headers */,
+				B43C35FC2408A19600CB8A84 /* gl_types.h in Headers */,
+				B43C35FD2408A19600CB8A84 /* Versions.h in Headers */,
+				B43C35FE2408A19600CB8A84 /* osinclude.h in Headers */,
+				B43C35FF2408A19600CB8A84 /* PpTokens.h in Headers */,
+				B43C36002408A19600CB8A84 /* GLSL.ext.AMD.h in Headers */,
+				B43C36012408A19600CB8A84 /* disassemble.h in Headers */,
+				B43C36022408A19600CB8A84 /* RemoveTree.h in Headers */,
+				B43C36032408A19600CB8A84 /* PoolAlloc.h in Headers */,
+				B43C36042408A19600CB8A84 /* SpvTools.h in Headers */,
+				B43C36052408A19600CB8A84 /* ShHandle.h in Headers */,
+				B43C36062408A19600CB8A84 /* LiveTraverser.h in Headers */,
+				B43C36072408A19600CB8A84 /* Logger.h in Headers */,
+				B43C36082408A19600CB8A84 /* Scan.h in Headers */,
+				B43C36092408A19600CB8A84 /* InitializeGlobals.h in Headers */,
+				B43C360A2408A19600CB8A84 /* InfoSink.h in Headers */,
+				B43C360B2408A19600CB8A84 /* Types.h in Headers */,
+				B43C360C2408A19600CB8A84 /* spirv.hpp in Headers */,
+				B43C360D2408A19600CB8A84 /* localintermediate.h in Headers */,
+				B43C360E2408A19600CB8A84 /* SymbolTable.h in Headers */,
+				B43C360F2408A19600CB8A84 /* GLSL.ext.KHR.h in Headers */,
+				B43C36102408A19600CB8A84 /* parseVersions.h in Headers */,
+				B43C36112408A19600CB8A84 /* Initialize.h in Headers */,
+				B43C36122408A19600CB8A84 /* GLSL.ext.NV.h in Headers */,
+				B43C36132408A19600CB8A84 /* InitializeDll.h in Headers */,
+				B43C36142408A19600CB8A84 /* iomapper.h in Headers */,
+				B43C36152408A19600CB8A84 /* GlslangToSpv.h in Headers */,
+				B43C36162408A19600CB8A84 /* propagateNoContraction.h in Headers */,
+				B43C36172408A19600CB8A84 /* SPVRemapper.h in Headers */,
+				B43C36182408A19600CB8A84 /* ScanContext.h in Headers */,
+				B43C36192408A19600CB8A84 /* doc.h in Headers */,
+				B43C361A2408A19600CB8A84 /* ShaderLang.h in Headers */,
+				B43C361B2408A19600CB8A84 /* revision.h in Headers */,
+				B43C361C2408A19600CB8A84 /* GLSL.std.450.h in Headers */,
+				B43C361D2408A19600CB8A84 /* BaseTypes.h in Headers */,
+				B43C361E2408A19600CB8A84 /* Common.h in Headers */,
+				B43C361F2408A19600CB8A84 /* glslang_tab.cpp.h in Headers */,
+				B43C36202408A19600CB8A84 /* spvIR.h in Headers */,
+				B43C36212408A19600CB8A84 /* hex_float.h in Headers */,
+				B43C36222408A19600CB8A84 /* intermediate.h in Headers */,
+				B43C36232408A19600CB8A84 /* ResourceLimits.h in Headers */,
+				B43C36242408A19600CB8A84 /* ParseHelper.h in Headers */,
+				B43C36252408A19600CB8A84 /* PpContext.h in Headers */,
+				B43C36262408A19600CB8A84 /* pch.h in Headers */,
+				B43C36272408A19600CB8A84 /* bitutils.h in Headers */,
+				B43C36282408A19600CB8A84 /* reflection.h in Headers */,
+				B43C36292408A19600CB8A84 /* attribute.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -2970,6 +3739,54 @@
 			productReference = A972ABF021CED7CB0013AB25 /* libglslang.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		B43C33A02408809300CB8A84 /* SPIRV-Cross-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B43C33B22408809300CB8A84 /* Build configuration list for PBXNativeTarget "SPIRV-Cross-tvOS" */;
+			buildPhases = (
+				B43C33A12408809300CB8A84 /* Headers */,
+				B43C33AA2408809300CB8A84 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SPIRV-Cross-tvOS";
+			productName = "SPIRV-Cross-iOS";
+			productReference = B43C33B52408809300CB8A84 /* libSPIRV-Cross-tvOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B43C33B62408812200CB8A84 /* SPIRV-Tools-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B43C353F2408812200CB8A84 /* Build configuration list for PBXNativeTarget "SPIRV-Tools-tvOS" */;
+			buildPhases = (
+				B43C33B72408812200CB8A84 /* Headers */,
+				B43C34742408812200CB8A84 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SPIRV-Tools-tvOS";
+			productName = "SPIRV-Cross-iOS";
+			productReference = B43C35422408812200CB8A84 /* libSPIRV-Tools-tvOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B43C35F62408A19600CB8A84 /* glslang-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B43C36542408A19600CB8A84 /* Build configuration list for PBXNativeTarget "glslang-tvOS" */;
+			buildPhases = (
+				B43C35F72408A19600CB8A84 /* Headers */,
+				B43C362A2408A19600CB8A84 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "glslang-tvOS";
+			productName = "SPIRV-Cross-iOS";
+			productReference = B43C36572408A19600CB8A84 /* libglslang-tvOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -3013,6 +3830,9 @@
 				A972A81021CECBE90013AB25 /* SPIRV-Tools-macOS */,
 				A972ABC921CED7BC0013AB25 /* glslang-iOS */,
 				A972ABDD21CED7CB0013AB25 /* glslang-macOS */,
+				B43C33A02408809300CB8A84 /* SPIRV-Cross-tvOS */,
+				B43C33B62408812200CB8A84 /* SPIRV-Tools-tvOS */,
+				B43C35F62408A19600CB8A84 /* glslang-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -3599,6 +4419,277 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B43C33AA2408809300CB8A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C33AB2408809300CB8A84 /* spirv_msl.cpp in Sources */,
+				B43C33AC2408809300CB8A84 /* spirv_parser.cpp in Sources */,
+				B43C33AD2408809300CB8A84 /* spirv_cfg.cpp in Sources */,
+				B43C33AE2408809300CB8A84 /* spirv_cross.cpp in Sources */,
+				B43C33AF2408809300CB8A84 /* spirv_reflect.cpp in Sources */,
+				B43C33B02408809300CB8A84 /* spirv_glsl.cpp in Sources */,
+				B43C33B12408809300CB8A84 /* spirv_cross_parsed_ir.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B43C34742408812200CB8A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C34752408812200CB8A84 /* spirv_reducer_options.cpp in Sources */,
+				B43C34762408812200CB8A84 /* loop_fission.cpp in Sources */,
+				B43C34772408812200CB8A84 /* binary.cpp in Sources */,
+				B43C34782408812200CB8A84 /* text.cpp in Sources */,
+				B43C34792408812200CB8A84 /* struct_cfg_analysis.cpp in Sources */,
+				B43C347A2408812200CB8A84 /* loop_fusion_pass.cpp in Sources */,
+				B43C347B2408812200CB8A84 /* code_sink.cpp in Sources */,
+				B43C347C2408812200CB8A84 /* validate_atomics.cpp in Sources */,
+				B43C347D2408812200CB8A84 /* desc_sroa.cpp in Sources */,
+				B43C347E2408812200CB8A84 /* pass_manager.cpp in Sources */,
+				B43C347F2408812200CB8A84 /* function.cpp in Sources */,
+				B43C34802408812200CB8A84 /* operand_to_dominating_id_reduction_opportunity_finder.cpp in Sources */,
+				B43C34812408812200CB8A84 /* remove_relaxed_precision_decoration_opportunity_finder.cpp in Sources */,
+				B43C34822408812200CB8A84 /* opcode.cpp in Sources */,
+				B43C34832408812200CB8A84 /* remove_function_reduction_opportunity_finder.cpp in Sources */,
+				B43C34842408812200CB8A84 /* fold_spec_constant_op_and_composite_pass.cpp in Sources */,
+				B43C34852408812200CB8A84 /* dead_variable_elimination.cpp in Sources */,
+				B43C34862408812200CB8A84 /* local_access_chain_convert_pass.cpp in Sources */,
+				B43C34872408812200CB8A84 /* validate_literals.cpp in Sources */,
+				B43C34882408812200CB8A84 /* pass.cpp in Sources */,
+				B43C34892408812200CB8A84 /* validation_state.cpp in Sources */,
+				B43C348A2408812200CB8A84 /* validate_small_type_uses.cpp in Sources */,
+				B43C348B2408812200CB8A84 /* validate_layout.cpp in Sources */,
+				B43C348C2408812200CB8A84 /* fix_storage_class.cpp in Sources */,
+				B43C348D2408812200CB8A84 /* instruction.cpp in Sources */,
+				B43C348E2408812200CB8A84 /* operand_to_undef_reduction_opportunity_finder.cpp in Sources */,
+				B43C348F2408812200CB8A84 /* validate_composites.cpp in Sources */,
+				B43C34902408812200CB8A84 /* merge_return_pass.cpp in Sources */,
+				B43C34912408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity_finder.cpp in Sources */,
+				B43C34922408812200CB8A84 /* freeze_spec_constant_value_pass.cpp in Sources */,
+				B43C34932408812200CB8A84 /* remove_instruction_reduction_opportunity.cpp in Sources */,
+				B43C34942408812200CB8A84 /* ccp_pass.cpp in Sources */,
+				B43C34952408812200CB8A84 /* pch_source.cpp in Sources */,
+				B43C34962408812200CB8A84 /* cfg.cpp in Sources */,
+				B43C34972408812200CB8A84 /* basic_block.cpp in Sources */,
+				B43C34982408812200CB8A84 /* merge_blocks_reduction_opportunity_finder.cpp in Sources */,
+				B43C34992408812200CB8A84 /* validate_extensions.cpp in Sources */,
+				B43C349A2408812200CB8A84 /* merge_blocks_reduction_opportunity.cpp in Sources */,
+				B43C349B2408812200CB8A84 /* validate_misc.cpp in Sources */,
+				B43C349C2408812200CB8A84 /* dead_branch_elim_pass.cpp in Sources */,
+				B43C349D2408812200CB8A84 /* instruction.cpp in Sources */,
+				B43C349E2408812200CB8A84 /* table.cpp in Sources */,
+				B43C349F2408812200CB8A84 /* validate_datarules.cpp in Sources */,
+				B43C34A02408812200CB8A84 /* wrap_opkill.cpp in Sources */,
+				B43C34A12408812200CB8A84 /* decompose_initialized_variables_pass.cpp in Sources */,
+				B43C34A22408812200CB8A84 /* loop_fusion.cpp in Sources */,
+				B43C34A32408812200CB8A84 /* loop_descriptor.cpp in Sources */,
+				B43C34A42408812200CB8A84 /* legalize_vector_shuffle_pass.cpp in Sources */,
+				B43C34A52408812200CB8A84 /* remove_opname_instruction_reduction_opportunity_finder.cpp in Sources */,
+				B43C34A62408812200CB8A84 /* relax_float_ops_pass.cpp in Sources */,
+				B43C34A72408812200CB8A84 /* process_lines_pass.cpp in Sources */,
+				B43C34A82408812200CB8A84 /* build_module.cpp in Sources */,
+				B43C34A92408812200CB8A84 /* amd_ext_to_khr.cpp in Sources */,
+				B43C34AA2408812200CB8A84 /* validate_execution_limitations.cpp in Sources */,
+				B43C34AB2408812200CB8A84 /* private_to_local_pass.cpp in Sources */,
+				B43C34AC2408812200CB8A84 /* validate.cpp in Sources */,
+				B43C34AD2408812200CB8A84 /* validate_capability.cpp in Sources */,
+				B43C34AE2408812200CB8A84 /* eliminate_dead_constant_pass.cpp in Sources */,
+				B43C34AF2408812200CB8A84 /* unify_const_pass.cpp in Sources */,
+				B43C34B02408812200CB8A84 /* reducer.cpp in Sources */,
+				B43C34B12408812200CB8A84 /* optimizer.cpp in Sources */,
+				B43C34B22408812200CB8A84 /* software_version.cpp in Sources */,
+				B43C34B32408812200CB8A84 /* replace_invalid_opc.cpp in Sources */,
+				B43C34B42408812200CB8A84 /* instrument_pass.cpp in Sources */,
+				B43C34B52408812200CB8A84 /* basic_block.cpp in Sources */,
+				B43C34B62408812200CB8A84 /* vector_dce.cpp in Sources */,
+				B43C34B72408812200CB8A84 /* spirv_fuzzer_options.cpp in Sources */,
+				B43C34B82408812200CB8A84 /* strip_reflect_info_pass.cpp in Sources */,
+				B43C34B92408812200CB8A84 /* graphics_robust_access_pass.cpp in Sources */,
+				B43C34BA2408812200CB8A84 /* split_invalid_unreachable_pass.cpp in Sources */,
+				B43C34BB2408812200CB8A84 /* change_operand_reduction_opportunity.cpp in Sources */,
+				B43C34BC2408812200CB8A84 /* inst_bindless_check_pass.cpp in Sources */,
+				B43C34BD2408812200CB8A84 /* validate_logicals.cpp in Sources */,
+				B43C34BE2408812200CB8A84 /* validate_memory_semantics.cpp in Sources */,
+				B43C34BF2408812200CB8A84 /* dominator_analysis.cpp in Sources */,
+				B43C34C02408812200CB8A84 /* ext_inst.cpp in Sources */,
+				B43C34C12408812200CB8A84 /* validate_type.cpp in Sources */,
+				B43C34C22408812200CB8A84 /* eliminate_dead_functions_pass.cpp in Sources */,
+				B43C34C32408812200CB8A84 /* spirv_target_env.cpp in Sources */,
+				B43C34C42408812200CB8A84 /* ssa_rewrite_pass.cpp in Sources */,
+				B43C34C52408812200CB8A84 /* cfg_cleanup_pass.cpp in Sources */,
+				B43C34C62408812200CB8A84 /* remove_selection_reduction_opportunity.cpp in Sources */,
+				B43C34C72408812200CB8A84 /* module.cpp in Sources */,
+				B43C34C82408812200CB8A84 /* validate_builtins.cpp in Sources */,
+				B43C34C92408812200CB8A84 /* string_utils.cpp in Sources */,
+				B43C34CA2408812200CB8A84 /* validate_barriers.cpp in Sources */,
+				B43C34CB2408812200CB8A84 /* remove_duplicates_pass.cpp in Sources */,
+				B43C34CC2408812200CB8A84 /* loop_unroller.cpp in Sources */,
+				B43C34CD2408812200CB8A84 /* inline_opaque_pass.cpp in Sources */,
+				B43C34CE2408812200CB8A84 /* composite.cpp in Sources */,
+				B43C34CF2408812200CB8A84 /* local_single_block_elim_pass.cpp in Sources */,
+				B43C34D02408812200CB8A84 /* libspirv.cpp in Sources */,
+				B43C34D12408812200CB8A84 /* parse_number.cpp in Sources */,
+				B43C34D22408812200CB8A84 /* validate_mode_setting.cpp in Sources */,
+				B43C34D32408812200CB8A84 /* function.cpp in Sources */,
+				B43C34D42408812200CB8A84 /* copy_prop_arrays.cpp in Sources */,
+				B43C34D52408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_opportunity_finder.cpp in Sources */,
+				B43C34D62408812200CB8A84 /* validate_function.cpp in Sources */,
+				B43C34D72408812200CB8A84 /* const_folding_rules.cpp in Sources */,
+				B43C34D82408812200CB8A84 /* propagator.cpp in Sources */,
+				B43C34D92408812200CB8A84 /* spirv_optimizer_options.cpp in Sources */,
+				B43C34DA2408812200CB8A84 /* remove_block_reduction_opportunity_finder.cpp in Sources */,
+				B43C34DB2408812200CB8A84 /* reduction_util.cpp in Sources */,
+				B43C34DC2408812200CB8A84 /* validate_non_uniform.cpp in Sources */,
+				B43C34DD2408812200CB8A84 /* ir_loader.cpp in Sources */,
+				B43C34DE2408812200CB8A84 /* compact_ids_pass.cpp in Sources */,
+				B43C34DF2408812200CB8A84 /* folding_rules.cpp in Sources */,
+				B43C34E02408812200CB8A84 /* eliminate_dead_functions_util.cpp in Sources */,
+				B43C34E12408812200CB8A84 /* loop_utils.cpp in Sources */,
+				B43C34E22408812200CB8A84 /* decoration_manager.cpp in Sources */,
+				B43C34E32408812200CB8A84 /* validate_constants.cpp in Sources */,
+				B43C34E42408812200CB8A84 /* block_merge_pass.cpp in Sources */,
+				B43C34E52408812200CB8A84 /* scalar_analysis.cpp in Sources */,
+				B43C34E62408812200CB8A84 /* text_handler.cpp in Sources */,
+				B43C34E72408812200CB8A84 /* validate_cfg.cpp in Sources */,
+				B43C34E82408812200CB8A84 /* spirv_validator_options.cpp in Sources */,
+				B43C34E92408812200CB8A84 /* workaround1209.cpp in Sources */,
+				B43C34EA2408812200CB8A84 /* simple_conditional_branch_to_branch_opportunity_finder.cpp in Sources */,
+				B43C34EB2408812200CB8A84 /* change_operand_to_undef_reduction_opportunity.cpp in Sources */,
+				B43C34EC2408812200CB8A84 /* local_single_store_elim_pass.cpp in Sources */,
+				B43C34ED2408812200CB8A84 /* validate_scopes.cpp in Sources */,
+				B43C34EE2408812200CB8A84 /* instruction_list.cpp in Sources */,
+				B43C34EF2408812200CB8A84 /* inst_buff_addr_check_pass.cpp in Sources */,
+				B43C34F02408812200CB8A84 /* constants.cpp in Sources */,
+				B43C34F12408812200CB8A84 /* diagnostic.cpp in Sources */,
+				B43C34F22408812200CB8A84 /* strength_reduction_pass.cpp in Sources */,
+				B43C34F32408812200CB8A84 /* ir_context.cpp in Sources */,
+				B43C34F42408812200CB8A84 /* reduction_opportunity.cpp in Sources */,
+				B43C34F52408812200CB8A84 /* strip_atomic_counter_memory_pass.cpp in Sources */,
+				B43C34F62408812200CB8A84 /* pch_source_reduce.cpp in Sources */,
+				B43C34F72408812200CB8A84 /* inline_pass.cpp in Sources */,
+				B43C34F82408812200CB8A84 /* assembly_grammar.cpp in Sources */,
+				B43C34F92408812200CB8A84 /* validate_arithmetics.cpp in Sources */,
+				B43C34FA2408812200CB8A84 /* pch_source_opt.cpp in Sources */,
+				B43C34FB2408812200CB8A84 /* structured_loop_to_selection_reduction_opportunity.cpp in Sources */,
+				B43C34FC2408812200CB8A84 /* convert_to_half_pass.cpp in Sources */,
+				B43C34FD2408812200CB8A84 /* value_number_table.cpp in Sources */,
+				B43C34FE2408812200CB8A84 /* upgrade_memory_model.cpp in Sources */,
+				B43C34FF2408812200CB8A84 /* dead_insert_elim_pass.cpp in Sources */,
+				B43C35002408812200CB8A84 /* construct.cpp in Sources */,
+				B43C35012408812200CB8A84 /* bit_vector.cpp in Sources */,
+				B43C35022408812200CB8A84 /* validate_derivatives.cpp in Sources */,
+				B43C35032408812200CB8A84 /* loop_dependence.cpp in Sources */,
+				B43C35042408812200CB8A84 /* aggressive_dead_code_elim_pass.cpp in Sources */,
+				B43C35052408812200CB8A84 /* def_use_manager.cpp in Sources */,
+				B43C35062408812200CB8A84 /* validate_decorations.cpp in Sources */,
+				B43C35072408812200CB8A84 /* redundancy_elimination.cpp in Sources */,
+				B43C35082408812200CB8A84 /* simple_conditional_branch_to_branch_reduction_opportunity.cpp in Sources */,
+				B43C35092408812200CB8A84 /* loop_unswitch_pass.cpp in Sources */,
+				B43C350A2408812200CB8A84 /* remove_unreferenced_instruction_reduction_opportunity_finder.cpp in Sources */,
+				B43C350B2408812200CB8A84 /* parsed_operand.cpp in Sources */,
+				B43C350C2408812200CB8A84 /* scalar_replacement_pass.cpp in Sources */,
+				B43C350D2408812200CB8A84 /* extensions.cpp in Sources */,
+				B43C350E2408812200CB8A84 /* validate_memory.cpp in Sources */,
+				B43C350F2408812200CB8A84 /* name_mapper.cpp in Sources */,
+				B43C35102408812200CB8A84 /* spirv_endian.cpp in Sources */,
+				B43C35112408812200CB8A84 /* validate_debug.cpp in Sources */,
+				B43C35122408812200CB8A84 /* local_redundancy_elimination.cpp in Sources */,
+				B43C35132408812200CB8A84 /* feature_manager.cpp in Sources */,
+				B43C35142408812200CB8A84 /* generate_webgpu_initializers_pass.cpp in Sources */,
+				B43C35152408812200CB8A84 /* conditional_branch_to_simple_conditional_branch_reduction_opportunity.cpp in Sources */,
+				B43C35162408812200CB8A84 /* set_spec_constant_default_value_pass.cpp in Sources */,
+				B43C35172408812200CB8A84 /* validate_bitwise.cpp in Sources */,
+				B43C35182408812200CB8A84 /* strip_debug_info_pass.cpp in Sources */,
+				B43C35192408812200CB8A84 /* fold.cpp in Sources */,
+				B43C351A2408812200CB8A84 /* mem_pass.cpp in Sources */,
+				B43C351B2408812200CB8A84 /* types.cpp in Sources */,
+				B43C351C2408812200CB8A84 /* enum_string_mapping.cpp in Sources */,
+				B43C351D2408812200CB8A84 /* reduce_load_size.cpp in Sources */,
+				B43C351E2408812200CB8A84 /* print.cpp in Sources */,
+				B43C351F2408812200CB8A84 /* loop_peeling.cpp in Sources */,
+				B43C35202408812200CB8A84 /* reduction_pass.cpp in Sources */,
+				B43C35212408812200CB8A84 /* flatten_decoration_pass.cpp in Sources */,
+				B43C35222408812200CB8A84 /* validate_adjacency.cpp in Sources */,
+				B43C35232408812200CB8A84 /* operand.cpp in Sources */,
+				B43C35242408812200CB8A84 /* if_conversion.cpp in Sources */,
+				B43C35252408812200CB8A84 /* validate_annotation.cpp in Sources */,
+				B43C35262408812200CB8A84 /* validate_id.cpp in Sources */,
+				B43C35272408812200CB8A84 /* dominator_tree.cpp in Sources */,
+				B43C35282408812200CB8A84 /* licm_pass.cpp in Sources */,
+				B43C35292408812200CB8A84 /* validate_image.cpp in Sources */,
+				B43C352A2408812200CB8A84 /* register_pressure.cpp in Sources */,
+				B43C352B2408812200CB8A84 /* validate_interfaces.cpp in Sources */,
+				B43C352C2408812200CB8A84 /* eliminate_dead_members_pass.cpp in Sources */,
+				B43C352D2408812200CB8A84 /* linker.cpp in Sources */,
+				B43C352E2408812200CB8A84 /* remove_block_reduction_opportunity.cpp in Sources */,
+				B43C352F2408812200CB8A84 /* inline_exhaustive_pass.cpp in Sources */,
+				B43C35302408812200CB8A84 /* simplification_pass.cpp in Sources */,
+				B43C35312408812200CB8A84 /* scalar_analysis_simplification.cpp in Sources */,
+				B43C35322408812200CB8A84 /* validate_primitives.cpp in Sources */,
+				B43C35332408812200CB8A84 /* disassemble.cpp in Sources */,
+				B43C35342408812200CB8A84 /* loop_dependence_helpers.cpp in Sources */,
+				B43C35352408812200CB8A84 /* type_manager.cpp in Sources */,
+				B43C35362408812200CB8A84 /* validate_conversion.cpp in Sources */,
+				B43C35372408812200CB8A84 /* timer.cpp in Sources */,
+				B43C35382408812200CB8A84 /* remove_selection_reduction_opportunity_finder.cpp in Sources */,
+				B43C35392408812200CB8A84 /* combine_access_chains.cpp in Sources */,
+				B43C353A2408812200CB8A84 /* validate_instruction.cpp in Sources */,
+				B43C353B2408812200CB8A84 /* block_merge_util.cpp in Sources */,
+				B43C353C2408812200CB8A84 /* remove_function_reduction_opportunity.cpp in Sources */,
+				B43C353D2408812200CB8A84 /* operand_to_const_reduction_opportunity_finder.cpp in Sources */,
+				B43C353E2408812200CB8A84 /* local_ssa_elim_pass.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B43C362A2408A19600CB8A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43C362B2408A19600CB8A84 /* SPVRemapper.cpp in Sources */,
+				B43C362C2408A19600CB8A84 /* Logger.cpp in Sources */,
+				B43C362D2408A19600CB8A84 /* parseConst.cpp in Sources */,
+				B43C362E2408A19600CB8A84 /* iomapper.cpp in Sources */,
+				B43C362F2408A19600CB8A84 /* glslang_tab.cpp in Sources */,
+				B43C36302408A19600CB8A84 /* ossource.cpp in Sources */,
+				B43C36312408A19600CB8A84 /* SpvPostProcess.cpp in Sources */,
+				B43C36322408A19600CB8A84 /* Link.cpp in Sources */,
+				B43C36332408A19600CB8A84 /* PpAtom.cpp in Sources */,
+				B43C36342408A19600CB8A84 /* attribute.cpp in Sources */,
+				B43C36352408A19600CB8A84 /* pch.cpp in Sources */,
+				B43C36362408A19600CB8A84 /* InitializeDll.cpp in Sources */,
+				B43C36372408A19600CB8A84 /* limits.cpp in Sources */,
+				B43C36382408A19600CB8A84 /* Pp.cpp in Sources */,
+				B43C36392408A19600CB8A84 /* ParseContextBase.cpp in Sources */,
+				B43C363A2408A19600CB8A84 /* Versions.cpp in Sources */,
+				B43C363B2408A19600CB8A84 /* reflection.cpp in Sources */,
+				B43C363C2408A19600CB8A84 /* SpvBuilder.cpp in Sources */,
+				B43C363D2408A19600CB8A84 /* RemoveTree.cpp in Sources */,
+				B43C363E2408A19600CB8A84 /* SymbolTable.cpp in Sources */,
+				B43C363F2408A19600CB8A84 /* SpvTools.cpp in Sources */,
+				B43C36402408A19600CB8A84 /* Intermediate.cpp in Sources */,
+				B43C36412408A19600CB8A84 /* Scan.cpp in Sources */,
+				B43C36422408A19600CB8A84 /* PpContext.cpp in Sources */,
+				B43C36432408A19600CB8A84 /* doc.cpp in Sources */,
+				B43C36442408A19600CB8A84 /* ParseHelper.cpp in Sources */,
+				B43C36452408A19600CB8A84 /* propagateNoContraction.cpp in Sources */,
+				B43C36462408A19600CB8A84 /* PpTokens.cpp in Sources */,
+				B43C36472408A19600CB8A84 /* PpScanner.cpp in Sources */,
+				B43C36482408A19600CB8A84 /* Initialize.cpp in Sources */,
+				B43C36492408A19600CB8A84 /* IntermTraverse.cpp in Sources */,
+				B43C364A2408A19600CB8A84 /* ShaderLang.cpp in Sources */,
+				B43C364B2408A19600CB8A84 /* disassemble.cpp in Sources */,
+				B43C364C2408A19600CB8A84 /* Constant.cpp in Sources */,
+				B43C364D2408A19600CB8A84 /* GlslangToSpv.cpp in Sources */,
+				B43C364E2408A19600CB8A84 /* intermOut.cpp in Sources */,
+				B43C364F2408A19600CB8A84 /* linkValidate.cpp in Sources */,
+				B43C36502408A19600CB8A84 /* InfoSink.cpp in Sources */,
+				B43C36512408A19600CB8A84 /* CodeGen.cpp in Sources */,
+				B43C36522408A19600CB8A84 /* InReadableOrder.cpp in Sources */,
+				B43C36532408A19600CB8A84 /* PoolAlloc.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -4005,6 +5096,136 @@
 			};
 			name = Release;
 		};
+		B43C33B32408809300CB8A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SPIRV_CROSS_NAMESPACE_OVERRIDE=MVK_spirv_cross",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		B43C33B42408809300CB8A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SPIRV_CROSS_NAMESPACE_OVERRIDE=MVK_spirv_cross",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
+		B43C35402408812200CB8A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/include\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/external/spirv-headers/include\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/build\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		B43C35412408812200CB8A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/include\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/external/spirv-headers/include\"",
+					"\"$(SRCROOT)/External/glslang/External/spirv-tools/build\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
+		B43C36552408A19600CB8A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"AMD_EXTENSIONS=1",
+					"NV_EXTENSIONS=1",
+				);
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		B43C36562408A19600CB8A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BITCODE_GENERATION_MODE = bitcode;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"AMD_EXTENSIONS=1",
+					"NV_EXTENSIONS=1",
+				);
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4094,6 +5315,33 @@
 			buildConfigurations = (
 				A9F55D3F198BE6A8004EC31B /* Debug */,
 				A9F55D40198BE6A8004EC31B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B43C33B22408809300CB8A84 /* Build configuration list for PBXNativeTarget "SPIRV-Cross-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B43C33B32408809300CB8A84 /* Debug */,
+				B43C33B42408809300CB8A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B43C353F2408812200CB8A84 /* Build configuration list for PBXNativeTarget "SPIRV-Tools-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B43C35402408812200CB8A84 /* Debug */,
+				B43C35412408812200CB8A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B43C36542408A19600CB8A84 /* Build configuration list for PBXNativeTarget "glslang-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B43C36552408A19600CB8A84 /* Debug */,
+				B43C36562408A19600CB8A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

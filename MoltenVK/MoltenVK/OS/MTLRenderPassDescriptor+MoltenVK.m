@@ -28,9 +28,11 @@
 	return self.renderTargetArrayLength;
 #endif
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ( [self respondsToSelector: @selector(renderTargetArrayLength)] ) {
 		return self.renderTargetArrayLength;
 	}
+#endif
 	return 0;
 #endif
 
@@ -42,9 +44,11 @@
 	self.renderTargetArrayLength = length;
 #endif
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ( [self respondsToSelector: @selector(setRenderTargetArrayLength:)] ) {
 		self.renderTargetArrayLength = length;
 	}
+#endif
 #endif
 
 }
@@ -55,8 +59,10 @@
 	return 0;
 #endif
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ([self respondsToSelector: @selector(renderTargetWidth)])
 		return self.renderTargetWidth;
+#endif
 	return 0;
 #endif
 
@@ -65,8 +71,10 @@
 -(void) setRenderTargetWidthMVK: (NSUInteger) width {
 
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ([self respondsToSelector: @selector(setRenderTargetWidth:)])
 		self.renderTargetWidth = width;
+#endif
 #endif
 
 }
@@ -77,8 +85,10 @@
 	return 0;
 #endif
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ([self respondsToSelector: @selector(renderTargetHeight)])
 		return self.renderTargetHeight;
+#endif
 	return 0;
 #endif
 
@@ -87,8 +97,10 @@
 -(void) setRenderTargetHeightMVK: (NSUInteger) height {
 
 #if MVK_IOS
+#if !TARGET_OS_TV
 	if ([self respondsToSelector: @selector(setRenderTargetHeight:)])
 		self.renderTargetHeight = height;
+#endif
 #endif
 
 }

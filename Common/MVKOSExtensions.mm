@@ -101,9 +101,11 @@ bool mvkGetEnvVarBool(std::string varName, bool* pWasFound) {
 uint64_t mvkGetSystemMemorySize() {
 	mach_msg_type_number_t host_size = HOST_BASIC_INFO_COUNT;
 	host_basic_info_data_t info;
+#if !TARGET_OS_TV
 	if (host_info(mach_host_self(), HOST_BASIC_INFO, (host_info_t)&info, &host_size) == KERN_SUCCESS) {
 		return info.max_mem;
 	}
+#endif
 	return 0;
 }
 
