@@ -47,6 +47,20 @@
 			name = ExternalDependencies;
 			productName = "ExternalLibraries-macOS";
 		};
+		BAA99DCC24244B6600EC6E64 /* ExternalDependencies-tvOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BAA99DD424244B6600EC6E64 /* Build configuration list for PBXAggregateTarget "ExternalDependencies-tvOS" */;
+			buildPhases = (
+				BAA99DD324244B6600EC6E64 /* Package External Libraries */,
+			);
+			dependencies = (
+				BAA99DD824244B7700EC6E64 /* PBXTargetDependency */,
+				BAA99DDA24244B7700EC6E64 /* PBXTargetDependency */,
+				BAA99DDC24244B7700EC6E64 /* PBXTargetDependency */,
+			);
+			name = "ExternalDependencies-tvOS";
+			productName = "ExternalLibraries-macOS";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -1596,6 +1610,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = A972ABDD21CED7CB0013AB25;
 			remoteInfo = "glslang-macOS";
+		};
+		BAA99DD724244B7700EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9F55D25198BE6A7004EC31B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C33A02408809300CB8A84;
+			remoteInfo = "SPIRV-Cross-tvOS";
+		};
+		BAA99DD924244B7700EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9F55D25198BE6A7004EC31B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C33B62408812200CB8A84;
+			remoteInfo = "SPIRV-Tools-tvOS";
+		};
+		BAA99DDB24244B7700EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9F55D25198BE6A7004EC31B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C35F62408A19600CB8A84;
+			remoteInfo = "glslang-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -3806,6 +3841,9 @@
 					A972A7F221CEC81B0013AB25 = {
 						ProvisioningStyle = Automatic;
 					};
+					BAA99DCC24244B6600EC6E64 = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = A9F55D28198BE6A7004EC31B /* Build configuration list for PBXProject "ExternalDependencies" */;
@@ -3824,6 +3862,7 @@
 				A972A7F221CEC81B0013AB25 /* ExternalDependencies */,
 				A972A7EA21CEC8030013AB25 /* ExternalDependencies-iOS */,
 				A972A7E421CEC72F0013AB25 /* ExternalDependencies-macOS */,
+				BAA99DCC24244B6600EC6E64 /* ExternalDependencies-tvOS */,
 				A90FD75B21CC4EAB00B92BB2 /* SPIRV-Cross-iOS */,
 				A90FD8A021CC4EB900B92BB2 /* SPIRV-Cross-macOS */,
 				A972A7FC21CECBBF0013AB25 /* SPIRV-Tools-iOS */,
@@ -3873,6 +3912,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Scripts/package_ext_libs_macos.sh\"\n";
+		};
+		BAA99DD324244B6600EC6E64 /* Package External Libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Package External Libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/package_ext_libs_tvos.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4733,6 +4790,21 @@
 			target = A972ABDD21CED7CB0013AB25 /* glslang-macOS */;
 			targetProxy = A972ABF321CED8C20013AB25 /* PBXContainerItemProxy */;
 		};
+		BAA99DD824244B7700EC6E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B43C33A02408809300CB8A84 /* SPIRV-Cross-tvOS */;
+			targetProxy = BAA99DD724244B7700EC6E64 /* PBXContainerItemProxy */;
+		};
+		BAA99DDA24244B7700EC6E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B43C33B62408812200CB8A84 /* SPIRV-Tools-tvOS */;
+			targetProxy = BAA99DD924244B7700EC6E64 /* PBXContainerItemProxy */;
+		};
+		BAA99DDC24244B7700EC6E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B43C35F62408A19600CB8A84 /* glslang-tvOS */;
+			targetProxy = BAA99DDB24244B7700EC6E64 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -5226,6 +5298,22 @@
 			};
 			name = Release;
 		};
+		BAA99DD524244B6600EC6E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAA99DD624244B6600EC6E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -5342,6 +5430,15 @@
 			buildConfigurations = (
 				B43C36552408A19600CB8A84 /* Debug */,
 				B43C36562408A19600CB8A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAA99DD424244B6600EC6E64 /* Build configuration list for PBXAggregateTarget "ExternalDependencies-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA99DD524244B6600EC6E64 /* Debug */,
+				BAA99DD624244B6600EC6E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

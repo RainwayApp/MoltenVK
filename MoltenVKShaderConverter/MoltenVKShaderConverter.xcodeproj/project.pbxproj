@@ -492,6 +492,8 @@
 				B43C35462408846C00CB8A84 /* Headers */,
 				B43C354D2408846C00CB8A84 /* Sources */,
 				B43C35532408846C00CB8A84 /* Frameworks */,
+				BAA99DDD24244CBE00EC6E64 /* Create Dynamic Library */,
+				BAA99DDE24244CD600EC6E64 /* Create Framework */,
 			);
 			buildRules = (
 			);
@@ -509,6 +511,8 @@
 				B43C35DF24089DDF00CB8A84 /* Headers */,
 				B43C35E524089DDF00CB8A84 /* Sources */,
 				B43C35E924089DDF00CB8A84 /* Frameworks */,
+				BAA99DDF24244CF200EC6E64 /* Create Dynamic Library */,
+				BAA99DE024244CF300EC6E64 /* Create Framework */,
 			);
 			buildRules = (
 			);
@@ -716,6 +720,78 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = ". \"${SRCROOT}/../Scripts/create_dylib_macos.sh\"\n";
+		};
+		BAA99DDD24244CBE00EC6E64 /* Create Dynamic Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Dynamic Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_dylib_tvos.sh\"\n";
+		};
+		BAA99DDE24244CD600EC6E64 /* Create Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_framework_tvos.sh\"\n";
+		};
+		BAA99DDF24244CF200EC6E64 /* Create Dynamic Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Dynamic Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_dylib_tvos.sh\"\n";
+		};
+		BAA99DE024244CF300EC6E64 /* Create Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_framework_tvos.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

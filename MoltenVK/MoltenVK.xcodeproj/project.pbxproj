@@ -403,25 +403,32 @@
 			remoteGlobalIDString = A93903C01C57E9ED00FE90DC;
 			remoteInfo = "MVKSPIRVToMSLConverter-macOS";
 		};
-		B43C355E2408861200CB8A84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A93903B81C57E9D700FE90DC;
-			remoteInfo = "MVKSPIRVToMSLConverter-iOS";
-		};
-		B43C35602408861200CB8A84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A937472B1A9A8B2900F29B34;
-			remoteInfo = "MoltenVKGLSLToSPIRVConverter-iOS";
-		};
 		B43C35D92408861200CB8A84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B43C355B2408846C00CB8A84;
+			remoteInfo = "MoltenVKSPIRVToMSLConverter-tvOS";
+		};
+		BAA99DC22424475B00EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43C35F124089DDF00CB8A84;
+			remoteInfo = "MoltenVKGLSLToSPIRVConverter-tvOS";
+		};
+		BAA99DC824244A5E00EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C35DE24089DDF00CB8A84;
+			remoteInfo = "MoltenVKGLSLToSPIRVConverter-tvOS";
+		};
+		BAA99DCA24244A5E00EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9C86CB61C55B8350096CAF2 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C35452408846C00CB8A84;
 			remoteInfo = "MoltenVKSPIRVToMSLConverter-tvOS";
 		};
 /* End PBXContainerItemProxy section */
@@ -707,6 +714,7 @@
 				A98149821FB6B566005F00B4 /* libMoltenVKSPIRVToMSLConverter.a */,
 				A98149841FB6B566005F00B4 /* libMoltenVKSPIRVToMSLConverter.a */,
 				B43C35DA2408861200CB8A84 /* libMoltenVKSPIRVToMSLConverter.a */,
+				BAA99DC32424475B00EC6E64 /* libMoltenVKGLSLToSPIRVConverter.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1032,12 +1040,14 @@
 			buildPhases = (
 				B43C35612408861200CB8A84 /* Headers */,
 				B43C359F2408861200CB8A84 /* Sources */,
+				BAA99DE12424527B00EC6E64 /* Create Dynamic Library */,
+				BAA99DE22424527D00EC6E64 /* Create Framework */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B43C355D2408861200CB8A84 /* PBXTargetDependency */,
-				B43C355F2408861200CB8A84 /* PBXTargetDependency */,
+				BAA99DC924244A5E00EC6E64 /* PBXTargetDependency */,
+				BAA99DCB24244A5E00EC6E64 /* PBXTargetDependency */,
 			);
 			name = "MoltenVK-tvOS";
 			productName = MoltenVK;
@@ -1131,6 +1141,13 @@
 			remoteRef = B43C35D92408861200CB8A84 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BAA99DC32424475B00EC6E64 /* libMoltenVKGLSLToSPIRVConverter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMoltenVKGLSLToSPIRVConverter.a;
+			remoteRef = BAA99DC22424475B00EC6E64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1197,6 +1214,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = ". \"${SRCROOT}/../Scripts/create_dylib_ios.sh\"\n";
+		};
+		BAA99DE12424527B00EC6E64 /* Create Dynamic Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Dynamic Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_dylib_tvos.sh\"\n";
+		};
+		BAA99DE22424527D00EC6E64 /* Create Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${SRCROOT}/../Scripts/create_framework_tvos.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1392,15 +1445,15 @@
 			name = "MVKSPIRVToMSLConverter-macOS";
 			targetProxy = A98149A31FB6B9EB005F00B4 /* PBXContainerItemProxy */;
 		};
-		B43C355D2408861200CB8A84 /* PBXTargetDependency */ = {
+		BAA99DC924244A5E00EC6E64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "MVKSPIRVToMSLConverter-iOS";
-			targetProxy = B43C355E2408861200CB8A84 /* PBXContainerItemProxy */;
+			name = "MoltenVKGLSLToSPIRVConverter-tvOS";
+			targetProxy = BAA99DC824244A5E00EC6E64 /* PBXContainerItemProxy */;
 		};
-		B43C355F2408861200CB8A84 /* PBXTargetDependency */ = {
+		BAA99DCB24244A5E00EC6E64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "MoltenVKGLSLToSPIRVConverter-iOS";
-			targetProxy = B43C35602408861200CB8A84 /* PBXContainerItemProxy */;
+			name = "MoltenVKSPIRVToMSLConverter-tvOS";
+			targetProxy = BAA99DCA24244A5E00EC6E64 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

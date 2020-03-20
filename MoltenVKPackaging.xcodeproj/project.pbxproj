@@ -45,6 +45,19 @@
 			name = MoltenVK;
 			productName = Package;
 		};
+		BAA99DF42424549900EC6E64 /* MoltenVK-tvOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BAA99DFA2424549900EC6E64 /* Build configuration list for PBXAggregateTarget "MoltenVK-tvOS" */;
+			buildPhases = (
+				BAA99DF92424549900EC6E64 /* Package MoltenVK */,
+			);
+			dependencies = (
+				BAA99E002424551B00EC6E64 /* PBXTargetDependency */,
+				BAA99DFE242454FF00EC6E64 /* PBXTargetDependency */,
+			);
+			name = "MoltenVK-tvOS";
+			productName = Package;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +152,41 @@
 			remoteGlobalIDString = A975D58B2140586700D4834F;
 			remoteInfo = "MoltenVK-macOS";
 		};
+		BAA99DE72424544900EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92DB3EE1CE0F72500FBC835 /* MoltenVK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43C35D62408861200CB8A84;
+			remoteInfo = "MoltenVK-tvOS";
+		};
+		BAA99DEE2424544900EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92DB40E1CE0F89600FBC835 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43C355B2408846C00CB8A84;
+			remoteInfo = "MoltenVKSPIRVToMSLConverter-tvOS";
+		};
+		BAA99DF02424544900EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92DB40E1CE0F89600FBC835 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43C35F124089DDF00CB8A84;
+			remoteInfo = "MoltenVKGLSLToSPIRVConverter-tvOS";
+		};
+		BAA99DFD242454FF00EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92DB40E1CE0F89600FBC835 /* MoltenVKShaderConverter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C35DE24089DDF00CB8A84;
+			remoteInfo = "MoltenVKGLSLToSPIRVConverter-tvOS";
+		};
+		BAA99DFF2424551B00EC6E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92DB3EE1CE0F72500FBC835 /* MoltenVK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B43C355C2408861200CB8A84;
+			remoteInfo = "MoltenVK-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +213,9 @@
 		A9C70F45221B04C800FBA31A /* create_dylib_ios.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = create_dylib_ios.sh; sourceTree = "<group>"; };
 		A9DA8340218A198C002AA662 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		A9DA8341218A198C002AA662 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BAA99DE52424544900EC6E64 /* create_dylib_tvos.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = create_dylib_tvos.sh; sourceTree = "<group>"; };
+		BAA99DF22424544900EC6E64 /* create_framework_tvos.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = create_framework_tvos.sh; sourceTree = "<group>"; };
+		BAA99DF32424545B00EC6E64 /* package_tvos.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = package_tvos.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -195,6 +246,7 @@
 			children = (
 				A92DB3F51CE0F72500FBC835 /* libMoltenVK.a */,
 				A92DB3F71CE0F72500FBC835 /* libMoltenVK.a */,
+				BAA99DE82424544900EC6E64 /* libMoltenVK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,9 +256,11 @@
 			children = (
 				A9C70F45221B04C800FBA31A /* create_dylib_ios.sh */,
 				A9C70F41221B04C800FBA31A /* create_dylib_macos.sh */,
+				BAA99DE52424544900EC6E64 /* create_dylib_tvos.sh */,
 				A975D55C213F25D700D4834F /* create_dylib.sh */,
 				A941E2B1221AEBD000890C56 /* create_framework_ios.sh */,
 				A941E2B2221AEBD000890C56 /* create_framework_macos.sh */,
+				BAA99DF22424544900EC6E64 /* create_framework_tvos.sh */,
 				A99A760321852584000A8E2A /* create_framework.sh */,
 				A92EF7C921856EA200C8B91B /* package_docs.sh */,
 				A92EF7C521856EA200C8B91B /* package_ios.sh */,
@@ -215,6 +269,7 @@
 				A92EF7CB21856EA300C8B91B /* package_shader_converter.sh */,
 				A9149F7A221A528900DD7C6C /* package_shader_converter_lib.sh */,
 				A92EF7C721856EA200C8B91B /* package_shader_converter_tool.sh */,
+				BAA99DF32424545B00EC6E64 /* package_tvos.sh */,
 				A92EF7CA21856EA200C8B91B /* package_update_latest.sh */,
 				A92EF7DE2186451700C8B91B /* Makefile */,
 			);
@@ -229,6 +284,8 @@
 				A981498F1FB6B566005F00B4 /* libMoltenVKGLSLToSPIRVConverter.a */,
 				A98149911FB6B566005F00B4 /* libMoltenVKSPIRVToMSLConverter.a */,
 				A98149931FB6B566005F00B4 /* libMoltenVKSPIRVToMSLConverter.a */,
+				BAA99DEF2424544900EC6E64 /* libMoltenVKSPIRVToMSLConverter.a */,
+				BAA99DF12424544900EC6E64 /* libMoltenVKGLSLToSPIRVConverter.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,6 +337,7 @@
 				A9FEADBC1F3517480010240E /* MoltenVK */,
 				A975D5782140585200D4834F /* MoltenVK-iOS */,
 				A975D58B2140586700D4834F /* MoltenVK-macOS */,
+				BAA99DF42424549900EC6E64 /* MoltenVK-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +392,27 @@
 			remoteRef = A98149921FB6B566005F00B4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BAA99DE82424544900EC6E64 /* libMoltenVK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMoltenVK.a;
+			remoteRef = BAA99DE72424544900EC6E64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BAA99DEF2424544900EC6E64 /* libMoltenVKSPIRVToMSLConverter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMoltenVKSPIRVToMSLConverter.a;
+			remoteRef = BAA99DEE2424544900EC6E64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BAA99DF12424544900EC6E64 /* libMoltenVKGLSLToSPIRVConverter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMoltenVKGLSLToSPIRVConverter.a;
+			remoteRef = BAA99DF02424544900EC6E64 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -364,6 +443,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Scripts/package_macos.sh\"\n";
+		};
+		BAA99DF92424549900EC6E64 /* Package MoltenVK */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Package MoltenVK";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/package_tvos.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -397,6 +490,16 @@
 			isa = PBXTargetDependency;
 			target = A975D58B2140586700D4834F /* MoltenVK-macOS */;
 			targetProxy = A9AFC2612184EEF60084B396 /* PBXContainerItemProxy */;
+		};
+		BAA99DFE242454FF00EC6E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoltenVKGLSLToSPIRVConverter-tvOS";
+			targetProxy = BAA99DFD242454FF00EC6E64 /* PBXContainerItemProxy */;
+		};
+		BAA99E002424551B00EC6E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoltenVK-tvOS";
+			targetProxy = BAA99DFF2424551B00EC6E64 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,6 +558,20 @@
 			};
 			name = Release;
 		};
+		BAA99DFB2424549900EC6E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAA99DFC2424549900EC6E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,6 +607,15 @@
 			buildConfigurations = (
 				A9FEADDD1F3517480010240E /* Debug */,
 				A9FEADDE1F3517480010240E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAA99DFA2424549900EC6E64 /* Build configuration list for PBXAggregateTarget "MoltenVK-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAA99DFB2424549900EC6E64 /* Debug */,
+				BAA99DFC2424549900EC6E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
